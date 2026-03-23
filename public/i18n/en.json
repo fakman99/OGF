@@ -45,7 +45,8 @@
     "statCert": "Certified",
     "ctaContact": "CONTACT.init()",
     "ctaExplore": "EXPLORE.run()",
-    "portraitAlt": "Fatih Akman — full-stack developer & analyst"
+    "portraitAlt": "Fatih Akman — full-stack developer & analyst",
+    "notAvailable": "Not Available currently"
   },
   "about": {
     "section": "About Me",

@@ -45,7 +45,8 @@
     "statCert": "Gecertificeerd",
     "ctaContact": "CONTACT.init()",
     "ctaExplore": "EXPLORE.run()",
-    "portraitAlt": "Fatih Akman — full-stack ontwikkelaar & analist"
+    "portraitAlt": "Fatih Akman — full-stack ontwikkelaar & analist",
+    "notAvailable": "Momenteel niet beschikbaar"
   },
   "about": {
     "section": "Over mij",

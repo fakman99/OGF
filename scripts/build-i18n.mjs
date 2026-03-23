@@ -86,6 +86,7 @@ function buildEn() {
       ctaContact: 'CONTACT.init()',
       ctaExplore: 'EXPLORE.run()',
       portraitAlt: 'Fatih Akman — full-stack developer & analyst',
+      notAvailable: 'Not Available currently',
     },
     about: {
       section: 'About Me',
@@ -430,6 +431,7 @@ const frPatch = {
     ctaContact: 'CONTACT.init()',
     ctaExplore: 'EXPLORER.run()',
     portraitAlt: 'Fatih Akman — développeur full stack & analyste',
+    notAvailable: 'Non disponible actuellement',
   },
   about: {
     section: 'À propos',
@@ -734,6 +736,7 @@ const nlPatch = {
     statTech: 'Technologieën',
     statCert: 'Gecertificeerd',
     portraitAlt: 'Fatih Akman — full-stack ontwikkelaar & analist',
+    notAvailable: 'Momenteel niet beschikbaar',
   },
   about: {
     section: 'Over mij',
@@ -988,6 +991,7 @@ const trPatch = {
     statTech: 'Teknolojiler',
     statCert: 'Sertifikalı',
     portraitAlt: 'Fatih Akman — full-stack geliştirici & analist',
+    notAvailable: 'Şu anda müsait değil',
   },
   about: {
     section: 'Hakkımda',

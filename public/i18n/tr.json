@@ -45,7 +45,8 @@
     "statCert": "Sertifikalı",
     "ctaContact": "CONTACT.init()",
     "ctaExplore": "EXPLORE.run()",
-    "portraitAlt": "Fatih Akman — full-stack geliştirici & analist"
+    "portraitAlt": "Fatih Akman — full-stack geliştirici & analist",
+    "notAvailable": "Şu anda müsait değil"
   },
   "about": {
     "section": "Hakkımda",
