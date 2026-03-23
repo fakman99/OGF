@@ -66,6 +66,10 @@
   transform: scaleY(1);
 }
 
+.tech-icon-wrap {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
+}
+
 .tech-stats {
   opacity: 0;
   transition: opacity 0.6s ease 1s;

@@ -1,0 +1,30 @@
+.scroll-progress-host {
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.scroll-progress-fill {
+  transition: width 0.12s ease-out;
+  will-change: width;
+}
+
+.scroll-progress-host--hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress-host {
+    transition: none;
+  }
+
+  .scroll-progress-host.scroll-progress-host--hidden {
+    opacity: 1;
+    transform: none;
+  }
+
+  .scroll-progress-fill {
+    transition: none;
+  }
+}

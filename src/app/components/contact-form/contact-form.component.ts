@@ -7,6 +7,7 @@ import {
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgIcon } from '@ng-icons/core';
 import { InViewDirective } from '../../core/in-view.directive';
+import { SITE_EMAIL } from '../../site-links';
 
 @Component({
   selector: 'app-contact-form',
@@ -25,6 +26,7 @@ export class ContactFormComponent {
   private readonly snackBar = inject(MatSnackBar);
 
   readonly visible = signal(false);
+  readonly contactEmail = SITE_EMAIL;
 
   /** Fixed layout positions (replaces React Math.random in template). */
   readonly blobs = [
@@ -46,23 +48,28 @@ export class ContactFormComponent {
     this.visible.set(true);
   }
 
-  onSubmit(): void {
+  async onSubmit(): Promise<void> {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
     }
     const v = this.form.getRawValue();
-    const mailto = `mailto:contact@fatihakman.dev?subject=${encodeURIComponent(
+    const body = `Name: ${v.name}\nEmail: ${v.email}\n\nMessage:\n${v.message}`;
+    const mailto = `mailto:${SITE_EMAIL}?subject=${encodeURIComponent(
       v.subject,
-    )}&body=${encodeURIComponent(
-      `Name: ${v.name}\nEmail: ${v.email}\n\nMessage:\n${v.message}`,
-    )}`;
+    )}&body=${encodeURIComponent(body)}`;
+    const clipboardText = `Subject: ${v.subject}\nFrom: ${v.name} <${v.email}>\n\n${v.message}`;
+    try {
+      await navigator.clipboard.writeText(clipboardText);
+    } catch {
+      /* no clipboard permission — mailto still attempted */
+    }
     window.location.href = mailto;
     this.snackBar.open(
-      'Email client opening… Your message is ready to send.',
+      'Opening your email app… Message also copied to clipboard as a backup.',
       'Dismiss',
       {
-        duration: 5000,
+        duration: 6000,
         panelClass: ['portfolio-snackbar'],
       },
     );

@@ -2,7 +2,7 @@
   id="about"
   appInView
   (visible)="onInView()"
-  class="min-h-screen py-20 px-4 bg-zinc-950 text-white relative"
+  class="pt-20 pb-10 md:pb-12 px-4 bg-zinc-950 text-white relative"
 >
   <div class="max-w-6xl mx-auto">
     <div class="about-section" [class.about-visible]="visible()">
@@ -11,25 +11,32 @@
       </div>
 
       <div class="grid lg:grid-cols-2 gap-12">
-        <div class="bg-black border border-gray-800 p-6 font-mono text-sm overflow-x-auto">
+        <div
+          class="about-code-panel bg-black border border-gray-800 p-4 sm:p-6 font-mono text-xs sm:text-sm min-w-0 max-w-full overflow-hidden rounded-sm"
+        >
           <div class="flex items-center gap-2 mb-4 pb-4 border-b border-gray-800">
             <div class="w-3 h-3 rounded-full bg-red-500"></div>
             <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
             <div class="w-3 h-3 rounded-full bg-green-500"></div>
-            <span class="ml-2 text-gray-500">developer.ts</span>
+            <span class="ml-2 text-gray-500 truncate">developer.ts</span>
           </div>
 
-          <div class="space-y-1">
+          <div class="space-y-0.5">
             @for (line of codeLines; track $index; let i = $index) {
               <div
-                class="flex code-line"
+                class="flex code-line min-w-0 items-start gap-2 sm:gap-3"
                 [class.code-line-visible]="visible()"
                 [style.transition-delay.ms]="visible() ? i * 50 : 0"
               >
-                <span class="text-gray-600 w-8 text-right mr-4 select-none">
+                <span
+                  class="text-gray-600 w-6 sm:w-8 shrink-0 text-right select-none tabular-nums text-[10px] sm:text-sm leading-snug sm:leading-normal pt-px"
+                >
                   {{ line ? i + 1 : '' }}
                 </span>
-                <span [ngClass]="lineClass(line)">{{ line }}</span>
+                <span
+                  class="min-w-0 flex-1 whitespace-pre-wrap break-words [overflow-wrap:anywhere] leading-snug sm:leading-normal"
+                  [ngClass]="lineClass(line)"
+                >{{ line }}</span>
               </div>
             }
           </div>
@@ -55,13 +62,13 @@
             </p>
 
             <p>
-              With 7+ years of experience, I've delivered full-stack applications using Go, Angular, Laravel, and
+              With 5+ years of experience, I've delivered full-stack applications using Go, PHP, Laravel, Angular, and
               Flutter, working with enterprise databases like MySQL, IBM i DB2, and PostgreSQL.
             </p>
 
             <div class="pt-4 border-t border-gray-800">
               <div class="font-mono text-xs text-gray-600">
-                {{ '{' }} status: <span class="text-green-400">"Available for projects"</span> {{ '}' }}
+                {{ '{' }} status: <span class="text-green-400">"Remote · small projects only"</span> {{ '}' }}
               </div>
             </div>
           </div>

@@ -46,7 +46,10 @@
               </div>
               <div>
                 <div class="font-mono text-xs text-gray-500 mb-1">EMAIL</div>
-                <div class="text-white font-mono">contact&#64;fatihakman.dev</div>
+                <a
+                  class="text-white font-mono hover:text-green-400 transition-colors break-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-2 rounded-sm"
+                  [href]="'mailto:' + contactEmail"
+                >{{ contactEmail }}</a>
               </div>
             </div>
           </div>
@@ -62,7 +65,9 @@
               </div>
               <div>
                 <div class="font-mono text-xs text-gray-500 mb-1">LOCATION</div>
-                <div class="text-white font-mono">Europe (Remote Available)</div>
+                <div class="text-white font-mono leading-relaxed">
+                  Remote only — currently taking <span class="text-green-400/90">small projects</span>
+                </div>
               </div>
             </div>
           </div>
@@ -80,7 +85,7 @@
                 <div class="font-mono text-xs text-gray-500 mb-1">STATUS</div>
                 <div class="flex items-center gap-2">
                   <span class="status-dot w-2 h-2 rounded-full bg-green-400 inline-block"></span>
-                  <span class="text-white font-mono">Available for Projects</span>
+                  <span class="text-white font-mono">Open for small remote work</span>
                 </div>
               </div>
             </div>
@@ -88,8 +93,8 @@
 
           <div class="pt-6 contact-blurb" [class.contact-blurb-visible]="visible()" style="transition-delay: 500ms">
             <p class="text-gray-400 leading-relaxed mb-4">
-              Looking for a full-stack developer, technical analyst, or product owner? I'm available for freelance
-              projects and consulting.
+              Need a full-stack developer, analyst, or product clarity on a
+              <span class="text-gray-300 font-medium">small</span> remote project? I'm taking limited remote engagements right now — send a short brief and we'll see if it's a fit.
             </p>
             <div class="font-mono text-xs text-gray-600">
               {{ '{' }} response_time: <span class="text-green-400">&lt; 24 hours</span> {{ '}' }}
@@ -116,7 +121,7 @@
                   formControlName="name"
                   type="text"
                   placeholder="John Doe"
-                  class="w-full bg-black border border-gray-800 px-4 py-3 text-white font-mono focus:border-green-400 focus:outline-none transition-colors"
+                  class="w-full bg-black border border-gray-800 px-4 py-3 text-white font-mono focus:border-green-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black transition-colors"
                 />
               </div>
 
@@ -129,7 +134,7 @@
                   formControlName="email"
                   type="email"
                   placeholder="john@example.com"
-                  class="w-full bg-black border border-gray-800 px-4 py-3 text-white font-mono focus:border-green-400 focus:outline-none transition-colors"
+                  class="w-full bg-black border border-gray-800 px-4 py-3 text-white font-mono focus:border-green-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black transition-colors"
                 />
               </div>
 
@@ -142,7 +147,7 @@
                   formControlName="subject"
                   type="text"
                   placeholder="Project Inquiry"
-                  class="w-full bg-black border border-gray-800 px-4 py-3 text-white font-mono focus:border-green-400 focus:outline-none transition-colors"
+                  class="w-full bg-black border border-gray-800 px-4 py-3 text-white font-mono focus:border-green-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black transition-colors"
                 />
               </div>
 
@@ -155,13 +160,13 @@
                   formControlName="message"
                   placeholder="Tell me about your project..."
                   rows="6"
-                  class="w-full bg-black border border-gray-800 px-4 py-3 text-white font-mono focus:border-green-400 focus:outline-none transition-colors resize-none"
+                  class="w-full bg-black border border-gray-800 px-4 py-3 text-white font-mono focus:border-green-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black transition-colors resize-none"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                class="w-full bg-white text-black font-mono py-4 flex items-center justify-center gap-2 hover:bg-green-400 transition-colors group hover:scale-[1.02] active:scale-[0.98]"
+                class="w-full bg-white text-black font-mono py-4 flex items-center justify-center gap-2 hover:bg-green-400 transition-colors group hover:scale-[1.02] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
               >
                 <ng-icon
                   name="lucide-send"

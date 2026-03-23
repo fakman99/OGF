@@ -24,20 +24,60 @@
     </div>
 
     <div class="mb-8 hero-typing">
-      <div class="font-mono text-xl md:text-2xl text-green-400 h-8">
-        <span class="mr-2">&gt;</span>
-        {{ displayText }}
-        <span class="animate-pulse">|</span>
+      <div class="hero-console rounded-lg overflow-hidden border border-gray-800/90 shadow-[0_0_48px_-12px_rgba(74,222,128,0.15)]">
+        <div
+          class="hero-console-titlebar flex items-center gap-3 px-3 py-2 bg-zinc-900/95 border-b border-gray-800"
+        >
+          <span class="flex gap-1.5 shrink-0" aria-hidden="true">
+            <span class="h-2.5 w-2.5 rounded-full bg-red-500/90"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-amber-400/90"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-green-500/90"></span>
+          </span>
+          <span class="font-mono text-[11px] md:text-xs text-gray-500 truncate">
+            bash — ~/portfolio/roles.txt
+          </span>
+        </div>
+
+        <div class="hero-console-body relative px-4 py-4 md:px-5 md:py-5 bg-[#070707] font-mono">
+          <div
+            class="absolute inset-0 pointer-events-none opacity-[0.04] hero-console-scanlines"
+            aria-hidden="true"
+          ></div>
+
+          <div class="relative z-[1] text-sm md:text-base leading-relaxed">
+            <div class="text-gray-500 select-none">
+              <span class="text-emerald-500/90">{{ consolePrompt }}</span>
+              <span class="text-gray-300">{{ commandTyped }}</span>
+              @if (showCommandCursor) {
+                <span class="hero-console-cursor hero-console-cursor-cmd" aria-hidden="true"></span>
+              }
+            </div>
+
+            <div
+              #stdoutPane
+              class="mt-4 text-lg md:text-2xl text-green-400 leading-snug md:leading-normal whitespace-pre-line hero-console-stdout hero-console-stdout-stream min-h-[5.25rem] md:min-h-[6.75rem] max-h-[9.5rem] md:max-h-[11rem] overflow-y-auto overflow-x-hidden scroll-smooth"
+            >
+              {{ outputTyped }}
+              @if (showOutputCursor) {
+                <span
+                  class="hero-console-cursor hero-console-cursor-out"
+                  [class.hero-console-cursor-blink]="outputCursorBlinking"
+                  aria-hidden="true"
+                ></span>
+              }
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="grid grid-cols-3 gap-4 mb-12 max-w-2xl hero-stats">
       <div class="border border-gray-800 p-4 bg-gray-900/30">
-        <div class="font-mono text-3xl text-green-400 mb-1">7+</div>
+        <div class="font-mono text-3xl text-green-400 mb-1">5+</div>
         <div class="text-xs text-gray-500 uppercase tracking-wider">Years Exp</div>
       </div>
       <div class="border border-gray-800 p-4 bg-gray-900/30">
-        <div class="font-mono text-3xl text-blue-400 mb-1">20+</div>
+        <div class="font-mono text-3xl text-blue-400 mb-1">30+</div>
         <div class="text-xs text-gray-500 uppercase tracking-wider">Technologies</div>
       </div>
       <div class="border border-gray-800 p-4 bg-gray-900/30">
@@ -50,7 +90,7 @@
       <button
         type="button"
         (click)="scrollToContact()"
-        class="px-8 py-3 bg-white text-black font-mono font-medium hover:bg-green-400 transition-colors"
+        class="px-8 py-3 bg-white text-black font-mono font-medium hover:bg-green-400 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
       >
         CONTACT.init()
       </button>
@@ -58,7 +98,7 @@
       <button
         type="button"
         (click)="scrollToAbout()"
-        class="px-8 py-3 border border-white text-white font-mono font-medium hover:bg-white hover:text-black transition-all"
+        class="px-8 py-3 border border-white text-white font-mono font-medium hover:bg-white hover:text-black transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-400"
       >
         EXPLORE.run()
       </button>

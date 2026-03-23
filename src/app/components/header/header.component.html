@@ -10,14 +10,16 @@
       <button
         type="button"
         (click)="scrollToTop()"
-        class="flex items-center gap-2 text-white hover:text-green-400 transition-colors group"
+        class="flex items-center gap-2 text-white hover:text-green-400 transition-colors group focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-2 rounded-sm"
       >
         <ng-icon
           name="lucide-terminal"
           class="text-green-400 group-hover:rotate-12 transition-transform inline-block"
           size="20"
         />
-        <span class="font-mono font-bold tracking-tighter text-lg"> FATIH.dev </span>
+        <span class="font-mono font-bold tracking-tighter text-sm sm:text-base md:text-lg">
+          FATIH.OGF Solutions
+        </span>
       </button>
 
       <nav class="hidden md:flex items-center gap-8">
@@ -25,7 +27,7 @@
           <button
             type="button"
             (click)="scrollToSection(link.id)"
-            class="nav-link relative text-gray-400 hover:text-white transition-colors font-mono text-sm group"
+            class="nav-link relative text-gray-400 hover:text-white transition-colors font-mono text-sm group focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-2 rounded-sm"
           >
             {{ link.label }}
             <span class="nav-underline"></span>
@@ -34,17 +36,19 @@
         <button
           type="button"
           (click)="scrollToSection('contact')"
-          class="px-6 py-2 bg-white text-black font-mono text-sm hover:bg-green-400 transition-colors hover:scale-105 active:scale-95"
+          class="px-6 py-2 bg-white text-black font-mono text-sm hover:bg-green-400 transition-colors hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
         >
           HIRE_ME
         </button>
       </nav>
 
       <button
+        #menuToggle
         type="button"
         (click)="toggleMobile()"
-        class="md:hidden text-white"
+        class="md:hidden text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-2"
         [attr.aria-expanded]="isMobileMenuOpen"
+        aria-controls="mobile-nav"
         aria-label="Toggle menu"
       >
         @if (isMobileMenuOpen) {
@@ -56,13 +60,18 @@
     </div>
 
     @if (isMobileMenuOpen) {
-      <nav class="md:hidden mt-4 border-t border-gray-800 pt-4 mobile-nav-enter">
+      <nav
+        id="mobile-nav"
+        class="md:hidden mt-4 border-t border-gray-800 pt-4 mobile-nav-enter"
+        cdkTrapFocus
+        [cdkTrapFocusAutoCapture]="true"
+      >
         <div class="flex flex-col gap-4">
           @for (link of navLinks; track link.id; let i = $index) {
             <button
               type="button"
               (click)="scrollToSection(link.id)"
-              class="text-left text-gray-400 hover:text-white transition-colors font-mono text-sm py-2 hover:pl-2 transition-all mobile-nav-item"
+              class="text-left text-gray-400 hover:text-white transition-colors font-mono text-sm py-2 hover:pl-2 transition-all mobile-nav-item focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-2 rounded-sm"
               [style.animation-delay.ms]="i * 100"
             >
               <span class="text-green-400">&gt;</span> {{ link.label }}
@@ -71,7 +80,7 @@
           <button
             type="button"
             (click)="scrollToSection('contact')"
-            class="w-full px-6 py-3 bg-white text-black font-mono text-sm hover:bg-green-400 transition-colors"
+            class="w-full px-6 py-3 bg-white text-black font-mono text-sm hover:bg-green-400 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
           >
             HIRE_ME
           </button>

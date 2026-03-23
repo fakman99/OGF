@@ -44,10 +44,27 @@
             <div
               class="border border-gray-800 bg-zinc-950/50 p-4 hover:border-green-400/50 transition-all cursor-default backdrop-blur-sm"
             >
-              <div class="font-mono text-sm mb-1" [ngClass]="tech.color">
-                {{ tech.name }}
+              <div class="flex items-start gap-3">
+                <div
+                  class="tech-icon-wrap flex h-10 w-10 shrink-0 items-center justify-center rounded border border-gray-800 bg-black/60"
+                >
+                  <img
+                    [src]="iconSrc(tech)"
+                    width="24"
+                    height="24"
+                    class="h-6 w-6 object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+                    [alt]="tech.name + ' logo'"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="min-w-0 flex-1">
+                  <div class="font-mono text-sm mb-1" [ngClass]="tech.color">
+                    {{ tech.name }}
+                  </div>
+                  <div class="text-xs text-gray-600 font-mono">.{{ tech.category }}</div>
+                </div>
               </div>
-              <div class="text-xs text-gray-600 font-mono">.{{ tech.category }}</div>
             </div>
             <div class="tech-hover-line"></div>
           </div>
@@ -58,7 +75,7 @@
 
       <div class="tech-stats mt-16 grid grid-cols-1 md:grid-cols-3 gap-6" [class.tech-stats-visible]="visible()">
         <div class="border-l-2 border-green-400 pl-6">
-          <div class="font-mono text-3xl text-white mb-2">20+</div>
+          <div class="font-mono text-3xl text-white mb-2">30+</div>
           <div class="text-sm text-gray-500 uppercase tracking-wider">Technologies Mastered</div>
         </div>
         <div class="border-l-2 border-blue-400 pl-6">

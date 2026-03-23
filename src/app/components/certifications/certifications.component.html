@@ -1,0 +1,138 @@
+<section
+  id="certifications"
+  appInView
+  (visible)="onInView()"
+  class="py-20 px-4 bg-black text-white border-t border-gray-900"
+>
+  <div class="max-w-6xl mx-auto">
+    <div class="certs-head" [class.certs-visible]="visible()">
+      <div class="font-mono text-sm text-green-400 mb-8">
+        <span class="text-gray-600">// </span>Certifications
+      </div>
+
+      <h2 class="text-5xl md:text-7xl font-black mb-16 tracking-tight">
+        CREDENTIALS<br />
+        <span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400"
+        >
+          &amp; TRUST
+        </span>
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        @for (c of items; track c.credentialId; let i = $index) {
+          <article
+            class="cert-card border border-gray-800 bg-zinc-950/50 p-6 backdrop-blur-sm"
+            [class.cert-card-visible]="visible()"
+            [style.transition-delay.ms]="visible() ? i * 120 : 0"
+          >
+            <div class="flex items-start gap-3 mb-4">
+              @if (c.issuerLogoSrc) {
+                @if (c.issuerLinkUrl) {
+                  <a
+                    [href]="c.issuerLinkUrl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="cert-issuer-logo shrink-0 flex h-14 w-14 items-center justify-center rounded border border-gray-800 bg-black/60 p-2 hover:border-green-400/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-2 transition-colors"
+                    [attr.aria-label]="
+                      c.issuerShort + ' — ' + (c.issuerLogoAlt ?? 'Logo') + ' (lien externe)'
+                    "
+                  >
+                    <img
+                      [src]="c.issuerLogoSrc"
+                      alt=""
+                      width="40"
+                      height="40"
+                      class="max-h-full max-w-full object-contain"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </a>
+                } @else {
+                  <div
+                    class="cert-issuer-logo shrink-0 flex h-14 w-14 items-center justify-center rounded border border-gray-800 bg-black/60 p-2"
+                  >
+                    <img
+                      [src]="c.issuerLogoSrc"
+                      [alt]="c.issuerLogoAlt ?? c.issuerShort"
+                      width="40"
+                      height="40"
+                      class="max-h-full max-w-full object-contain"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                }
+              } @else {
+                <div class="text-green-400 mt-0.5 shrink-0">
+                  <ng-icon name="lucide-award" size="22" />
+                </div>
+              }
+              <div class="min-w-0">
+                <div class="font-mono text-xs text-gray-500 uppercase tracking-wider mb-1">
+                  {{ c.issuerShort }}
+                </div>
+                <h3 class="text-lg font-bold tracking-tight text-white">{{ c.title }}</h3>
+              </div>
+            </div>
+
+            <p class="text-sm text-gray-500 mb-4 leading-relaxed">{{ c.issuer }}</p>
+
+            <dl class="space-y-2 font-mono text-xs text-gray-400 mb-4">
+              <div class="flex flex-wrap gap-x-2">
+                <dt class="text-gray-600">Délivrance</dt>
+                <dd>{{ c.issued }}</dd>
+              </div>
+              @if (c.expires) {
+                <div class="flex flex-wrap gap-x-2">
+                  <dt class="text-gray-600">Expire</dt>
+                  <dd>{{ c.expires }}</dd>
+                </div>
+              }
+              <div class="flex flex-wrap gap-x-2">
+                <dt class="text-gray-600">ID</dt>
+                <dd class="text-green-400/90 break-all">{{ c.credentialId }}</dd>
+              </div>
+            </dl>
+
+            @if (c.category) {
+              <span
+                class="inline-block font-mono text-xs px-2 py-1 border border-gray-800 text-cyan-400/90 mb-3"
+              >
+                {{ c.category }}
+              </span>
+            }
+
+            @if (c.skills?.length) {
+              <div class="flex flex-wrap gap-2 mt-2">
+                @for (s of c.skills; track s) {
+                  <span
+                    class="font-mono text-xs px-2 py-1 border border-gray-800 text-gray-500"
+                  >
+                    {{ s }}
+                  </span>
+                }
+              </div>
+            }
+
+            @if (c.verifyUrl) {
+              <a
+                [href]="c.verifyUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 mt-4 font-mono text-sm text-green-400 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-2 transition-colors"
+              >
+                <ng-icon name="lucide-external-link" size="16" />
+                {{ c.verifyLabel ?? 'Vérifier' }}
+              </a>
+            } @else {
+              <p class="mt-4 font-mono text-xs text-gray-600">
+                Vérification sur le portail de l’organisme certificateur.
+              </p>
+            }
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>

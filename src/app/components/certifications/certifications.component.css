@@ -1,0 +1,37 @@
+.certs-head {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.certs-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cert-card {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.cert-card-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .certs-head,
+  .cert-card {
+    transition: none;
+  }
+
+  .certs-visible,
+  .cert-card-visible {
+    transform: none;
+  }
+}
