@@ -39,45 +39,49 @@
           </button>
         }
         <div
-          class="hidden md:flex items-center gap-0.5 border-l border-gray-700 pl-3 ml-1 lg:pl-4"
-          role="group"
-          [attr.aria-label]="'a11y.socialLinks' | translate"
+          class="hidden md:flex items-center gap-0 border-l border-gray-700 pl-2.5 ml-0"
         >
-          <a
-            [href]="social.linkedin"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-sm border border-transparent text-gray-400 transition-colors hover:border-gray-700 hover:text-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-400 focus-visible:outline-offset-2"
-            [attr.aria-label]="'footer.li' | translate"
+          <div
+            class="flex items-center gap-0.5"
+            role="group"
+            [attr.aria-label]="'a11y.socialLinks' | translate"
           >
-            <app-social-brand-logo brand="linkedin" />
-          </a>
-          <a
-            [href]="'mailto:' + contactEmail"
-            class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-sm border border-transparent text-gray-400 transition-colors hover:border-gray-700 hover:text-purple-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-purple-400 focus-visible:outline-offset-2"
-            [attr.aria-label]="'footer.mail' | translate"
-          >
-            <app-social-brand-logo brand="mail" />
-          </a>
-        </div>
-        <div
-          class="flex items-center gap-1 border-l border-gray-700 pl-4 ml-1"
-          role="group"
-          [attr.aria-label]="'a11y.language' | translate"
-        >
-          @for (lang of langs; track lang) {
-            <button
-              type="button"
-              (click)="pickLang(lang)"
-              class="font-mono text-xs px-2 py-1 rounded-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-2"
-              [class.text-green-400]="isActiveLang(lang)"
-              [class.bg-gray-900]="isActiveLang(lang)"
-              [class.text-gray-500]="!isActiveLang(lang)"
-              [class.hover:text-white]="!isActiveLang(lang)"
+            <a
+              [href]="social.linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-sm border border-transparent text-gray-400 transition-colors hover:border-gray-700 hover:text-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-400 focus-visible:outline-offset-2"
+              [attr.aria-label]="'footer.li' | translate"
             >
-              {{ 'lang.' + lang | translate }}
-            </button>
-          }
+              <app-social-brand-logo brand="linkedin" />
+            </a>
+            <a
+              [href]="'mailto:' + contactEmail"
+              class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-sm border border-transparent text-gray-400 transition-colors hover:border-gray-700 hover:text-purple-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-purple-400 focus-visible:outline-offset-2"
+              [attr.aria-label]="'footer.mail' | translate"
+            >
+              <app-social-brand-logo brand="mail" />
+            </a>
+          </div>
+          <div
+            class="flex items-center gap-1 self-stretch border-l border-gray-700 pl-2.5"
+            role="group"
+            [attr.aria-label]="'a11y.language' | translate"
+          >
+            @for (lang of langs; track lang) {
+              <button
+                type="button"
+                (click)="pickLang(lang)"
+                class="font-mono text-xs px-2 py-1 rounded-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-2"
+                [class.text-green-400]="isActiveLang(lang)"
+                [class.bg-gray-900]="isActiveLang(lang)"
+                [class.text-gray-500]="!isActiveLang(lang)"
+                [class.hover:text-white]="!isActiveLang(lang)"
+              >
+                {{ 'lang.' + lang | translate }}
+              </button>
+            }
+          </div>
         </div>
         <button
           type="button"
@@ -178,7 +182,7 @@
             </button>
           }
           <div
-            class="flex flex-wrap items-center justify-center gap-3 border-t border-gray-800 pt-4 mt-1"
+            class="flex flex-wrap items-center justify-center gap-2 border-t border-gray-800 pt-4 mt-1"
             role="group"
             [attr.aria-label]="'a11y.socialLinks' | translate"
           >
