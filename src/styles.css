@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  @apply bg-black text-white font-sans antialiased;
+}
+
+.portfolio-snackbar.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  background-color: #18181b !important;
+  color: #fff !important;
+  border: 1px solid #27272a;
+}
+
+.portfolio-snackbar .mat-mdc-button.mat-mdc-snack-bar-action {
+  color: #4ade80 !important;
+}

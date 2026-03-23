@@ -1,0 +1,58 @@
+@keyframes headerSlideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.header-enter {
+  animation: headerSlideDown 0.5s ease-out forwards;
+}
+
+.nav-underline {
+  position: absolute;
+  bottom: -0.25rem;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #4ade80;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.group:hover .nav-underline {
+  transform: scaleX(1);
+}
+
+.mobile-nav-enter {
+  animation: mobileNavOpen 0.25s ease-out forwards;
+}
+
+@keyframes mobileNavOpen {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 24rem;
+  }
+}
+
+.mobile-nav-item {
+  animation: mobileItem 0.3s ease-out backwards;
+}
+
+@keyframes mobileItem {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

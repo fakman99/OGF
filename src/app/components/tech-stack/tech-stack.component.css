@@ -1,0 +1,76 @@
+.stack-grid-line {
+  opacity: 0;
+}
+
+.stack-line-active {
+  animation: stackLinePulse 3s ease-in-out infinite;
+}
+
+@keyframes stackLinePulse {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.tech-head {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.tech-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tech-item {
+  opacity: 0;
+  transform: scale(0.8);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.tech-item-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.tech-item:hover {
+  transform: scale(1.05) translateX(10px);
+}
+
+.tech-item-visible:hover {
+  transform: scale(1.05) translateX(10px);
+}
+
+.tech-hover-line {
+  position: absolute;
+  left: -0.5rem;
+  top: 0;
+  bottom: 0;
+  width: 0.25rem;
+  background: #4ade80;
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.tech-item:hover .tech-hover-line {
+  transform: scaleY(1);
+}
+
+.tech-stats {
+  opacity: 0;
+  transition: opacity 0.6s ease 1s;
+}
+
+.tech-stats-visible {
+  opacity: 1;
+}

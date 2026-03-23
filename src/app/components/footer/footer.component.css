@@ -1,0 +1,22 @@
+.footer-gradient-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #4ade80, transparent);
+  animation: gradientSweep 3s linear infinite;
+}
+
+@keyframes gradientSweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.social-icon:hover {
+  transform: scale(1.05) translateY(-2px);
+}

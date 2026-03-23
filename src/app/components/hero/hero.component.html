@@ -1,0 +1,69 @@
+<section class="min-h-screen flex items-center justify-center px-4 bg-black text-white relative overflow-hidden">
+  <div
+    class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-[length:50px_50px]"
+  ></div>
+
+  <div class="max-w-5xl mx-auto relative z-10 hero-content">
+    <div class="mb-8 flex items-center gap-2 font-mono text-sm text-gray-500">
+      <ng-icon name="lucide-terminal" size="16" class="text-green-400" />
+      <span class="text-gray-600">~/portfolio</span>
+      <ng-icon name="lucide-chevron-right" size="14" />
+      <span class="text-green-400">./introduce</span>
+    </div>
+
+    <div class="mb-6 hero-name-block">
+      <div class="font-mono text-sm text-gray-500 mb-2">const developer = {{ '{' }}</div>
+      <h1 class="text-6xl md:text-8xl font-black tracking-tight mb-2">
+        <span
+          class="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent"
+        >
+          FATIH AKMAN
+        </span>
+      </h1>
+      <div class="font-mono text-sm text-gray-500">{{ '}' }}</div>
+    </div>
+
+    <div class="mb-8 hero-typing">
+      <div class="font-mono text-xl md:text-2xl text-green-400 h-8">
+        <span class="mr-2">&gt;</span>
+        {{ displayText }}
+        <span class="animate-pulse">|</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-4 mb-12 max-w-2xl hero-stats">
+      <div class="border border-gray-800 p-4 bg-gray-900/30">
+        <div class="font-mono text-3xl text-green-400 mb-1">7+</div>
+        <div class="text-xs text-gray-500 uppercase tracking-wider">Years Exp</div>
+      </div>
+      <div class="border border-gray-800 p-4 bg-gray-900/30">
+        <div class="font-mono text-3xl text-blue-400 mb-1">20+</div>
+        <div class="text-xs text-gray-500 uppercase tracking-wider">Technologies</div>
+      </div>
+      <div class="border border-gray-800 p-4 bg-gray-900/30">
+        <div class="font-mono text-3xl text-purple-400 mb-1">PSPO I</div>
+        <div class="text-xs text-gray-500 uppercase tracking-wider">Certified</div>
+      </div>
+    </div>
+
+    <div class="flex gap-4 hero-cta">
+      <button
+        type="button"
+        (click)="scrollToContact()"
+        class="px-8 py-3 bg-white text-black font-mono font-medium hover:bg-green-400 transition-colors"
+      >
+        CONTACT.init()
+      </button>
+
+      <button
+        type="button"
+        (click)="scrollToAbout()"
+        class="px-8 py-3 border border-white text-white font-mono font-medium hover:bg-white hover:text-black transition-all"
+      >
+        EXPLORE.run()
+      </button>
+    </div>
+  </div>
+
+  <div class="hero-cursor-line absolute bottom-10 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-white to-transparent"></div>
+</section>

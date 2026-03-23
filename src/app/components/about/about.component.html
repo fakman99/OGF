@@ -1,0 +1,72 @@
+<section
+  id="about"
+  appInView
+  (visible)="onInView()"
+  class="min-h-screen py-20 px-4 bg-zinc-950 text-white relative"
+>
+  <div class="max-w-6xl mx-auto">
+    <div class="about-section" [class.about-visible]="visible()">
+      <div class="font-mono text-sm text-green-400 mb-8">
+        <span class="text-gray-600">// </span>About Me
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div class="bg-black border border-gray-800 p-6 font-mono text-sm overflow-x-auto">
+          <div class="flex items-center gap-2 mb-4 pb-4 border-b border-gray-800">
+            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            <span class="ml-2 text-gray-500">developer.ts</span>
+          </div>
+
+          <div class="space-y-1">
+            @for (line of codeLines; track $index; let i = $index) {
+              <div
+                class="flex code-line"
+                [class.code-line-visible]="visible()"
+                [style.transition-delay.ms]="visible() ? i * 50 : 0"
+              >
+                <span class="text-gray-600 w-8 text-right mr-4 select-none">
+                  {{ line ? i + 1 : '' }}
+                </span>
+                <span [ngClass]="lineClass(line)">{{ line }}</span>
+              </div>
+            }
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div class="about-copy-block" [class.about-copy-visible]="visible()">
+            <h2 class="text-4xl font-black mb-6 tracking-tight">
+              BUILDING SCALABLE<br />
+              <span class="text-green-400">DIGITAL SOLUTIONS</span>
+            </h2>
+          </div>
+
+          <div class="space-y-4 text-gray-400 leading-relaxed about-text" [class.about-text-visible]="visible()">
+            <p>
+              Currently contributing to a strategic platform for a leading European wholesale industry group,
+              handling architecture, development, monitoring, and production support.
+            </p>
+
+            <p>
+              I bridge the gap between business stakeholders and technical teams, translating complex requirements
+              into robust, scalable solutions.
+            </p>
+
+            <p>
+              With 7+ years of experience, I've delivered full-stack applications using Go, Angular, Laravel, and
+              Flutter, working with enterprise databases like MySQL, IBM i DB2, and PostgreSQL.
+            </p>
+
+            <div class="pt-4 border-t border-gray-800">
+              <div class="font-mono text-xs text-gray-600">
+                {{ '{' }} status: <span class="text-green-400">"Available for projects"</span> {{ '}' }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

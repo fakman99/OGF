@@ -1,0 +1,87 @@
+.contact-blob {
+  background: radial-gradient(
+    circle,
+    rgba(34, 197, 94, 0.1) 0%,
+    transparent 70%
+  );
+  animation: blobFloat var(--blob-dur, 18s) ease-in-out infinite alternate;
+}
+
+.contact-blob-blue {
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.1) 0%,
+    transparent 70%
+  );
+}
+
+@keyframes blobFloat {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(var(--x-amp, 30px), var(--y-amp, -30px));
+  }
+}
+
+.contact-head {
+  opacity: 0;
+  transform: translateY(50px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.contact-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-card {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.contact-card-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contact-blurb {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.contact-blurb-visible {
+  opacity: 1;
+}
+
+.contact-form-wrap {
+  opacity: 0;
+  transform: translateX(30px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.contact-form-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.status-dot {
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
