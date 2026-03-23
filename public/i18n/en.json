@@ -1,8 +1,9 @@
 {
   "meta": {
-    "title": "Fatih Akman — Full-Stack Developer & Analyst | fatih@ogf_solutions",
-    "description": "Freelance analyst and full-stack developer. Angular, Go, PHP, Laravel, Flutter, enterprise data. PSPO I. Remote, small projects.",
-    "ogLocale": "en_US"
+    "title": "Fatih Akman — Full-Stack Developer & Analyst | OGF Solutions",
+    "description": "Freelance full-stack developer and analyst with OGF Solutions (SRL), Belgium. VAT BE 1031.478.796. Angular, Go, PHP, Laravel, Flutter, enterprise data. PSPO I. Remote, small projects.",
+    "ogLocale": "en_US",
+    "ogSiteName": "OGF Solutions"
   },
   "nav": {
     "about": "ABOUT",

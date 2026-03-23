@@ -48,10 +48,11 @@ const heroStdoutEn = [
 function buildEn() {
   return {
     meta: {
-      title: 'Fatih Akman — Full-Stack Developer & Analyst | fatih@ogf_solutions',
+      title: 'Fatih Akman — Full-Stack Developer & Analyst | OGF Solutions',
       description:
-        'Freelance analyst and full-stack developer. Angular, Go, PHP, Laravel, Flutter, enterprise data. PSPO I. Remote, small projects.',
+        'Freelance full-stack developer and analyst with OGF Solutions (SRL), Belgium. VAT BE 1031.478.796. Angular, Go, PHP, Laravel, Flutter, enterprise data. PSPO I. Remote, small projects.',
       ogLocale: 'en_US',
+      ogSiteName: 'OGF Solutions',
     },
     nav: {
       about: 'ABOUT',
@@ -395,9 +396,9 @@ function deepMerge(base, patch) {
 const frPatch = {
   meta: {
     title:
-      'Fatih Akman — Développeur full-stack & analyste | fatih@ogf_solutions',
+      'Fatih Akman — Développeur full-stack & analyste | OGF Solutions',
     description:
-      'Analyste et développeur full-stack freelance. Angular, Go, PHP, Laravel, Flutter, données d’entreprise. PSPO I. Télétravail, petits projets.',
+      'Analyste et développeur full-stack freelance chez OGF Solutions (SRL), Belgique. TVA BE 1031.478.796. Angular, Go, PHP, Laravel, Flutter, données d’entreprise. PSPO I. Télétravail, petits projets.',
     ogLocale: 'fr_FR',
   },
   nav: {
@@ -698,9 +699,9 @@ const frPatch = {
 
 const nlPatch = {
   meta: {
-    title: 'Fatih Akman — Full-stack ontwikkelaar & analist | fatih@ogf_solutions',
+    title: 'Fatih Akman — Full-stack ontwikkelaar & analist | OGF Solutions',
     description:
-      'Freelance analist en full-stack ontwikkelaar. Angular, Go, PHP, Laravel, Flutter, enterprise data. PSPO I. Remote, kleine projecten.',
+      'Freelance analist en full-stack ontwikkelaar bij OGF Solutions (SRL), België. BTW BE 1031.478.796. Angular, Go, PHP, Laravel, Flutter, enterprise data. PSPO I. Remote, kleine projecten.',
     ogLocale: 'nl_BE',
   },
   nav: {
@@ -946,9 +947,9 @@ const nlPatch = {
 
 const trPatch = {
   meta: {
-    title: 'Fatih Akman — Full-stack geliştirici & analist | fatih@ogf_solutions',
+    title: 'Fatih Akman — Full-stack geliştirici & analist | OGF Solutions',
     description:
-      'Serbest analist ve full-stack geliştirici. Angular, Go, PHP, Laravel, Flutter, kurumsal veri. PSPO I. Uzaktan, küçük projeler.',
+      'OGF Solutions (SRL), Belçika bünyesinde serbest analist ve full-stack geliştirici. KDV/VAT BE 1031.478.796. Angular, Go, PHP, Laravel, Flutter, kurumsal veri. PSPO I. Uzaktan, küçük projeler.',
     ogLocale: 'tr_TR',
   },
   nav: {

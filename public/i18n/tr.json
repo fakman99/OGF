@@ -1,8 +1,9 @@
 {
   "meta": {
-    "title": "Fatih Akman — Full-stack geliştirici & analist | fatih@ogf_solutions",
-    "description": "Serbest analist ve full-stack geliştirici. Angular, Go, PHP, Laravel, Flutter, kurumsal veri. PSPO I. Uzaktan, küçük projeler.",
-    "ogLocale": "tr_TR"
+    "title": "Fatih Akman — Full-stack geliştirici & analist | OGF Solutions",
+    "description": "OGF Solutions (SRL), Belçika bünyesinde serbest analist ve full-stack geliştirici. KDV/VAT BE 1031.478.796. Angular, Go, PHP, Laravel, Flutter, kurumsal veri. PSPO I. Uzaktan, küçük projeler.",
+    "ogLocale": "tr_TR",
+    "ogSiteName": "OGF Solutions"
   },
   "nav": {
     "about": "HAKKIMDA",

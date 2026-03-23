@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NgIcon } from '@ng-icons/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { ScrollService } from '../../core/scroll.service';
-import { SITE_EMAIL, SITE_SOCIAL } from '../../site-links';
+import { SITE_COMPANY, SITE_EMAIL, SITE_SOCIAL } from '../../site-links';
 import { SocialBrandLogoComponent } from '../social-brand-logo/social-brand-logo.component';
 
 @Component({
@@ -27,11 +27,7 @@ export class FooterComponent {
 
   readonly year = new Date().getFullYear();
 
-  readonly company = {
-    legalName: 'OGF Solutions (SRL)',
-    vat: 'BE 1031.478.796',
-    address: 'Square des Cicindèles 2, 1170 Watermael-Boitsfort',
-  } as const;
+  readonly company = SITE_COMPANY;
 
   constructor(private readonly scroll: ScrollService) {}
 

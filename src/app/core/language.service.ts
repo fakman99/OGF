@@ -70,13 +70,22 @@ export class LanguageService {
     html.setAttribute('lang', lang);
 
     this.translate
-      .get(['meta.title', 'meta.description', 'meta.ogLocale'])
+      .get([
+        'meta.title',
+        'meta.description',
+        'meta.ogLocale',
+        'meta.ogSiteName',
+      ])
       .pipe(take(1))
       .subscribe((t) => {
         this.title.setTitle(String(t['meta.title']));
         this.meta.updateTag({
           name: 'description',
           content: String(t['meta.description']),
+        });
+        this.meta.updateTag({
+          property: 'og:site_name',
+          content: String(t['meta.ogSiteName']),
         });
         this.meta.updateTag({
           property: 'og:title',
