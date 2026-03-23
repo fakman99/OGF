@@ -1,9 +1,8 @@
 /**
- * Update these URLs to match your public profiles (single source for footer / meta).
+ * Update these URLs to match your public profiles (single source for header / footer).
  */
 export const SITE_SOCIAL = {
-  github: 'https://github.com/fatihakman',
-  linkedin: 'https://www.linkedin.com/in/fatih-akman',
+  linkedin: 'https://www.linkedin.com/in/ogf-solutions-fatih-akman',
 } as const;
 
 export const SITE_ORIGIN = 'https://fatihakman.dev';

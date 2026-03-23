@@ -4,39 +4,46 @@ import {
   OnDestroy,
   OnInit,
   ViewChild,
+  inject,
 } from '@angular/core';
 import { NgIcon } from '@ng-icons/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 import { ScrollService } from '../../core/scroll.service';
 
 type ConsolePhase = 'typing-cmd' | 'pause-cmd' | 'typing-out' | 'done';
 
+/** Matches `hero.stdout.0` … in i18n (same pattern as `about.code`). */
+const HERO_STDOUT_LINE_COUNT = 3;
+
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [NgIcon],
+  imports: [NgIcon, TranslatePipe],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css',
 })
 export class HeroComponent implements OnInit, OnDestroy {
   @ViewChild('stdoutPane') private stdoutPane?: ElementRef<HTMLElement>;
 
-  readonly consolePrompt = 'fatih@portfolio:~$ ';
-  readonly consoleCmd = 'cat roles.txt';
+  private readonly translate = inject(TranslateService);
+  private readonly scroll = inject(ScrollService);
+
+  consolePrompt = '';
+  consoleCmd = '';
+  private stdoutLines: string[] = [];
 
   commandTyped = '';
   outputTyped = '';
+  /** Lines currently visible in `roles.txt` stdout (for letter-by-letter template). */
+  outputLines: string[] = [];
   consolePhase: ConsolePhase = 'typing-cmd';
 
-  /** Must match `.hero-typing` in hero.component.css: animation-delay + duration (~0.35s + 0.5s). */
   private readonly consoleStartDelayMs = 900;
-
-  private readonly stdoutLines = [
-    'Freelance',
-    'Analyst & Full Stack Developer',
-    'Product Owner (PSPO I)',
-  ];
+  private readonly loopRestartDelayMs = 3200;
 
   private startTimeoutId?: ReturnType<typeof setTimeout>;
+  private loopRestartTimeoutId?: ReturnType<typeof setTimeout>;
   private rafId?: number;
   private lastFrameTs = 0;
   private tickAccumulator = 0;
@@ -47,25 +54,62 @@ export class HeroComponent implements OnInit, OnDestroy {
   private colIndex = 0;
   private pauseLineTicks = 0;
 
-  /** ms between logical “ticks” (typing steps). */
-  private readonly tickMs = 28;
-  private readonly pauseAfterCmdTicks = 8;
-  private readonly pauseAfterLineTicks = 10;
-  private readonly cmdCharsPerTick = 2;
-  private readonly outCharsPerTick = 2;
+  private readonly tickMs = 26;
+  private readonly pauseAfterCmdTicks = 10;
+  /** Pause between stdout lines (terminal “line feed” beat). */
+  private readonly pauseAfterLineTicks = 18;
+  /** Slower keystrokes on the shell command. */
+  private readonly cmdCharsPerTick = 1;
+  /** One character per tick for clear letter-by-letter stdout. */
+  private readonly outCharsPerTick = 1;
 
-  constructor(private readonly scroll: ScrollService) {}
+  private langSub?: Subscription;
 
   ngOnInit(): void {
+    this.bootstrapConsole();
+    this.langSub = this.translate.onLangChange.subscribe(() =>
+      this.bootstrapConsole(),
+    );
+  }
+
+  private syncStrings(): void {
+    this.consolePrompt = this.translate.instant('hero.consolePrompt');
+    this.consoleCmd = this.translate.instant('hero.consoleCmd');
+    const lines: string[] = [];
+    for (let i = 0; i < HERO_STDOUT_LINE_COUNT; i++) {
+      lines.push(this.translate.instant(`hero.stdout.${i}`));
+    }
+    this.stdoutLines = lines;
+  }
+
+  private bootstrapConsole(): void {
+    this.syncStrings();
+    if (this.startTimeoutId) clearTimeout(this.startTimeoutId);
+    this.clearLoopRestart();
+    this.cancelAnimation();
+
     const reduce =
       typeof matchMedia !== 'undefined' &&
       matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduce) {
       this.commandTyped = this.consoleCmd;
       this.outputTyped = this.stdoutLines.join('\n');
+      this.outputLines = [...this.stdoutLines];
       this.consolePhase = 'done';
       return;
     }
+
+    this.commandTyped = '';
+    this.outputTyped = '';
+    this.outputLines = [];
+    this.consolePhase = 'typing-cmd';
+    this.cmdIndex = 0;
+    this.pauseCmdTicks = 0;
+    this.lineIndex = 0;
+    this.colIndex = 0;
+    this.pauseLineTicks = 0;
+    this.lastFrameTs = 0;
+    this.tickAccumulator = 0;
 
     this.startTimeoutId = setTimeout(() => {
       this.startTimeoutId = undefined;
@@ -115,6 +159,7 @@ export class HeroComponent implements OnInit, OnDestroy {
         this.colIndex = 0;
         this.pauseLineTicks = 0;
         this.outputTyped = '';
+        this.outputLines = [];
       }
       return;
     }
@@ -140,6 +185,7 @@ export class HeroComponent implements OnInit, OnDestroy {
             this.rebuildStdout();
             this.cancelAnimation();
             queueMicrotask(() => this.scrollStdoutToEnd());
+            this.scheduleLoopRestart();
             return;
           }
           this.pauseLineTicks = this.pauseAfterLineTicks;
@@ -164,6 +210,12 @@ export class HeroComponent implements OnInit, OnDestroy {
       parts.push(this.stdoutLines[this.lineIndex].slice(0, this.colIndex));
     }
     this.outputTyped = parts.join('\n');
+    this.outputLines = this.outputTyped ? this.outputTyped.split('\n') : [];
+  }
+
+  /** Split stdout line into characters for per-letter animation (preserves spaces). */
+  lineChars(line: string): string[] {
+    return line.length ? Array.from(line) : [];
   }
 
   private cancelAnimation(): void {
@@ -171,6 +223,36 @@ export class HeroComponent implements OnInit, OnDestroy {
       cancelAnimationFrame(this.rafId);
       this.rafId = undefined;
     }
+  }
+
+  private scheduleLoopRestart(): void {
+    this.clearLoopRestart();
+    this.loopRestartTimeoutId = setTimeout(() => {
+      this.loopRestartTimeoutId = undefined;
+      this.resetConsoleForLoop();
+    }, this.loopRestartDelayMs);
+  }
+
+  private clearLoopRestart(): void {
+    if (this.loopRestartTimeoutId != null) {
+      clearTimeout(this.loopRestartTimeoutId);
+      this.loopRestartTimeoutId = undefined;
+    }
+  }
+
+  private resetConsoleForLoop(): void {
+    this.commandTyped = '';
+    this.outputTyped = '';
+    this.outputLines = [];
+    this.consolePhase = 'typing-cmd';
+    this.cmdIndex = 0;
+    this.pauseCmdTicks = 0;
+    this.lineIndex = 0;
+    this.colIndex = 0;
+    this.pauseLineTicks = 0;
+    this.lastFrameTs = 0;
+    this.tickAccumulator = 0;
+    this.rafId = requestAnimationFrame((t) => this.onFrame(t));
   }
 
   private scrollStdoutToEnd(): void {
@@ -191,7 +273,9 @@ export class HeroComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.langSub?.unsubscribe();
     if (this.startTimeoutId) clearTimeout(this.startTimeoutId);
+    this.clearLoopRestart();
     this.cancelAnimation();
   }
 

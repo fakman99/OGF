@@ -24,6 +24,18 @@ body {
   scroll-margin-top: 5.5rem;
 }
 
+@media (max-width: 767px) {
+  #about,
+  #certifications,
+  #services,
+  #stack,
+  #projects,
+  #contact,
+  #main-content {
+    scroll-margin-top: 6.75rem;
+  }
+}
+
 body {
   margin: 0;
   @apply bg-black text-white font-sans antialiased;

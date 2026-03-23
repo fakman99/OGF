@@ -72,9 +72,11 @@
 
 .tech-stats {
   opacity: 0;
-  transition: opacity 0.6s ease 1s;
+  transition: opacity 0.55s ease;
+  transition-delay: 0s;
 }
 
 .tech-stats-visible {
   opacity: 1;
+  transition-delay: 0.85s;
 }

@@ -1,0 +1,328 @@
+{
+  "meta": {
+    "title": "Fatih Akman — Développeur full-stack & analyste | fatih@ogf_solutions",
+    "description": "Analyste et développeur full-stack freelance. Angular, Go, PHP, Laravel, Flutter, données d’entreprise. PSPO I. Télétravail, petits projets.",
+    "ogLocale": "fr_FR"
+  },
+  "nav": {
+    "about": "À PROPOS",
+    "certifications": "CERTIFS",
+    "services": "SERVICES",
+    "stack": "STACK",
+    "projects": "PROJETS",
+    "contact": "CONTACT"
+  },
+  "header": {
+    "brand": "fatih@ogf_solutions",
+    "hireMe": "ME_RECRUTER",
+    "menuToggle": "Toggle menu"
+  },
+  "lang": {
+    "en": "EN",
+    "fr": "FR",
+    "nl": "NL",
+    "tr": "TR"
+  },
+  "a11y": {
+    "language": "Langue",
+    "socialLinks": "Profils sociaux"
+  },
+  "hero": {
+    "pathPortfolio": "~/portfolio",
+    "pathIntro": "./introduce",
+    "constDev": "const developer =",
+    "consolePrompt": "fatih@ogf_solutions:~$ ",
+    "consoleTitle": "bash — ~/portfolio/roles.txt",
+    "consoleCmd": "cat roles.txt",
+    "stdout": {
+      "0": "Freelance",
+      "1": "Analyste & développeur full stack",
+      "2": "Product Owner (PSPO I)"
+    },
+    "statYears": "Ans d’exp.",
+    "statTech": "Technos",
+    "statCert": "Certifié",
+    "ctaContact": "CONTACT.init()",
+    "ctaExplore": "EXPLORER.run()",
+    "portraitAlt": "Fatih Akman — développeur full stack & analyste"
+  },
+  "about": {
+    "section": "À propos",
+    "panelFile": "developer.ts",
+    "headline1": "CONSTRUIRE DES",
+    "headline2": "SOLUTIONS NUMÉRIQUES",
+    "p1": "Je contribue actuellement à une plateforme stratégique pour un groupe européen de la grande distribution : architecture, développement, monitoring et support production.",
+    "p2": "Je fais le lien entre métiers et équipes techniques, en traduisant des besoins complexes en solutions robustes et scalables.",
+    "p3": "Avec plus de 5 ans d’expérience, j’ai livré des applications full stack avec Go, PHP, Laravel, Angular et Flutter, sur des bases MySQL, IBM i DB2 et PostgreSQL.",
+    "statusLine": "Télétravail · petits projets uniquement",
+    "code": {
+      "0": "class Developer {",
+      "1": "",
+      "2": "    constructor() {",
+      "3": "        this.name = 'Fatih Akman';",
+      "4": "        this.role = 'Développeur full-stack & Analyste';",
+      "5": "        this.certification = 'PSPO I';",
+      "6": "        this.experience = '5+ ans';",
+      "7": "    }",
+      "8": "",
+      "9": "    getCurrentProject() {",
+      "10": "        return {",
+      "11": "            client: 'Grande distribution européenne',",
+      "12": "            type: 'Plateforme stratégique',",
+      "13": "            responsibilities: [",
+      "14": "                'Architecture & développement',",
+      "15": "                'Monitoring & support',",
+      "16": "                'Traduire les besoins métier en solutions techniques',",
+      "17": "            ],",
+      "18": "        };",
+      "19": "    }",
+      "20": "",
+      "21": "}"
+    }
+  },
+  "services": {
+    "section": "Services",
+    "headline1": "CE QUE JE",
+    "headline2": "FAIS",
+    "fullstack": {
+      "title": "Développement full-stack",
+      "command": "dev.build()",
+      "description": "Applications web de bout en bout avec React, Angular, Node.js, PHP, Laravel et Go.",
+      "tags": "Frontend|Backend|API"
+    },
+    "apicustom": {
+      "title": "API sur mesure",
+      "command": "api.custom()",
+      "description": "Conception et livraison d’API HTTP sur mesure : REST ou GraphQL, authentification, versioning, documentation (OpenAPI), intégration à vos systèmes et partenaires.",
+      "tags": "REST|GraphQL|OpenAPI|Intégration"
+    },
+    "mobile": {
+      "title": "Développement mobile",
+      "command": "mobile.deploy()",
+      "description": "Apps cross-plateforme avec Flutter, Ionic, et iOS natif avec Swift.",
+      "tags": "iOS|Android|Cross-plateforme"
+    },
+    "database": {
+      "title": "Architecture bases de données",
+      "command": "db.optimize()",
+      "description": "Conception et optimisation MySQL, PostgreSQL et IBM i DB2.",
+      "tags": "SQL|NoSQL|Performance"
+    },
+    "architecture": {
+      "title": "Architecture système",
+      "command": "sys.scale()",
+      "description": "Architecture scalable avec monitoring et support production.",
+      "tags": "Cloud|DevOps|Monitoring"
+    },
+    "analysis": {
+      "title": "Analyse métier",
+      "command": "analyze.requirements()",
+      "description": "Traduire les besoins métier en solutions techniques.",
+      "tags": "Stratégie|Planification|Documentation"
+    },
+    "product": {
+      "title": "Product ownership",
+      "command": "product.manage()",
+      "description": "Certifié PSPO I, lien entre parties prenantes et équipes de développement.",
+      "tags": "Agile|Scrum|Leadership"
+    },
+    "automation": {
+      "title": "Automatisation métier & n8n",
+      "command": "automate.workflows()",
+      "description": "Automatisation de workflows avec n8n : CRM, APIs, notifications, outils internes. Automatisation de bout en bout pour PME et grandes structures.",
+      "tags": "n8n|Intégrations|APIs|Ops"
+    },
+    "ai": {
+      "title": "Automatisation IA",
+      "command": "ai.orchestrate()",
+      "description": "Pipelines LLM : résumés, classification, routage, copilotes branchés sur votre stack — du prototype aux garde-fous production.",
+      "tags": "Mistral|LLM|RAG|Prompting"
+    },
+    "bots": {
+      "title": "Bots & messagerie",
+      "command": "bot.deploy()",
+      "description": "Chatbots et bots tâches sur Telegram, webhooks, backends sur mesure — alertes, support, automatisation légère.",
+      "tags": "Telegram|Discord|Webhooks|Chatbots"
+    },
+    "wallet": {
+      "title": "Fidélité & cartes wallet",
+      "command": "loyalty.wallet()",
+      "description": "Programmes de fidélité numériques : passes Apple Wallet & Google Wallet, avec apps iOS & Android (tampons, paliers, campagnes).",
+      "tags": "iOS|Android|Wallet|Retail"
+    }
+  },
+  "projects": {
+    "section": "Projets",
+    "headline1": "SÉLECTION",
+    "headline2": "DE TRAVAUX",
+    "sub": "Chronologie alignée sur ton PDF (slides 2020–2023) et projets plus récents.",
+    "metaLine": "Full-Stack & Analyste",
+    "chrono": "// Chrono.parallax()",
+    "countSingular": "projet",
+    "countPlural": "projets",
+    "wip": "WIP",
+    "nda": "NDA",
+    "pdfAria": "Ouvrir le portfolio PDF — projets jusqu’en 2023",
+    "pdfQrAlt": "QR code — portfolio PDF projets jusqu’en 2023",
+    "pdfLabel": "// portfolio.archive.pdf",
+    "pdfBlurb": "PDF de synthèse des projets jusqu’en 2023.",
+    "pdfLink": "Ouvrir le portfolio PDF (2023)",
+    "entries": {
+      "ryflex": {
+        "name": "Ryflex",
+        "kind": "Application · soins à domicile (Belgique)",
+        "summary": "Application de remplacement pour les services de soins à domicile en Belgique."
+      },
+      "confidential-2025": {
+        "name": "Projet confidentiel — 2025",
+        "kind": "Grande distribution (Europe) · 2025",
+        "summary": "Projet sous NDA pour une grande société européenne de la grande distribution. Détails non divulguables."
+      },
+      "lobi": {
+        "name": "Lobi",
+        "kind": "Application Android",
+        "summary": "Projet personnel en cours. Application Android avec Firebase."
+      },
+      "altrove-media": {
+        "name": "Altrove Media",
+        "kind": "Média / journal",
+        "summary": "Média qui prend l'actualité sous un autre angle — Altrove."
+      },
+      "lubala": {
+        "name": "Lubala",
+        "kind": "WebApp",
+        "summary": "WebApp développée en Flutter pour un cabinet d’avocats à Kinshasa."
+      },
+      "havilaway": {
+        "name": "Havilaway",
+        "kind": "WebApp · IT Manager",
+        "summary": "WebApp Flutter pour une entreprise de gestion administrative et financière dans le domaine médical (Londres). Automatisation de processus, bases de données (SQL, Python)."
+      },
+      "emsf": {
+        "name": "EMSF",
+        "kind": "WebApp vitrine",
+        "summary": "Site pour l’ONG Enfance Meurtrie Sans Frontière (emsf-monde.org) — enfants de la rue et orphelins."
+      },
+      "deenshop": {
+        "name": "DeenShop",
+        "kind": "Analyse de données",
+        "summary": "Outil Python pour une librairie : analyse via APIs, suivi des ventes, répartition des bénéfices (maisons d’édition, fournisseurs)."
+      },
+      "la-bombetta": {
+        "name": "La Bombetta",
+        "kind": "WebApp",
+        "summary": "Site du restaurant italien La Bombetta, Grand Sablon — Rue Sainte-Anne 24, 1000 Bruxelles."
+      },
+      "kace": {
+        "name": "Kace",
+        "kind": "WebApp e-commerce",
+        "summary": "Site de vente de T-shirts mettant en avant Charleroi."
+      },
+      "tipstreet": {
+        "name": "TipStreet",
+        "kind": "Application Android",
+        "summary": "Application de paris sportifs : Firebase (authentification, données temps réel, notifications), système de bankroll et historique, paiement via Stripe."
+      }
+    }
+  },
+  "certs": {
+    "section": "Certifications",
+    "headline1": "PREUVES",
+    "headline2": "& CONFIANCE",
+    "issued": "Délivrance",
+    "expires": "Expire",
+    "id": "ID",
+    "verifyHint": "Vérification sur le portail de l’organisme certificateur.",
+    "verifyFallback": "Vérifier",
+    "ariaLogoExternal": "{{issuer}} — {{alt}} (lien externe)",
+    "items": {
+      "180944_10122025": {
+        "issuerShort": "ANSSI",
+        "issuer": "ANSSI — Agence nationale de la sécurité des systèmes d’information",
+        "title": "Initiation à la cybersécurité",
+        "issued": "Déc. 2025",
+        "expires": "Déc. 2035",
+        "category": "Cybersécurité",
+        "issuerLogoAlt": "Logo ANSSI"
+      },
+      "66a5fc98-e77c-433b-8826-86a75885e380": {
+        "issuerShort": "Scrum.org",
+        "issuer": "Scrum.org",
+        "title": "Professional Scrum Product Owner™ I (PSPO I)",
+        "issued": "Mai 2025",
+        "expires": "Mai 2028",
+        "verifyLabel": "Scrum.org — PSPO I",
+        "issuerLogoAlt": "Scrum.org"
+      }
+    }
+  },
+  "tech": {
+    "section": "Stack technique",
+    "headline1": "OUTILS &",
+    "headline2": "TECHNOLOGIES",
+    "stackOpen": "stack = [",
+    "stackClose": "];",
+    "logoAlt": "{{name}} logo",
+    "categories": {
+      "language": "langage",
+      "frontend": "frontend",
+      "backend": "backend",
+      "database": "base de données",
+      "tool": "outil",
+      "mobile": "mobile",
+      "automation": "automatisation",
+      "ai": "ia",
+      "payments": "paiements",
+      "wallet": "wallet"
+    },
+    "stat1": "Technologies maîtrisées",
+    "stat2": "Approche full-stack",
+    "stat3": "Apprentissage continu"
+  },
+  "contact": {
+    "section": "Contact",
+    "headline1": "CONSTRUISONS",
+    "headline2": "ENSEMBLE",
+    "email": "EMAIL",
+    "location": "LOCATION",
+    "locationPrefix": "Télétravail uniquement — actuellement ",
+    "locationEmphasis": "petits projets",
+    "status": "STATUS",
+    "statusBody": "Ouvert aux petites missions à distance",
+    "blurbBefore": "Besoin d’un développeur full-stack, d’un analyste ou d’éclaircissements produit sur un ",
+    "blurbEmphasis": "petit",
+    "blurbAfter": " projet à distance ? J’accepte un nombre limité de missions — envoyez un court brief pour voir si ça colle.",
+    "responseTime": "< 24 hours",
+    "responseKey": "response_time",
+    "formTitle": "contact.form",
+    "name": "Nom *",
+    "emailLabel": "E-mail *",
+    "subject": "Sujet *",
+    "message": "Message *",
+    "phName": "Jean Dupont",
+    "phEmail": "vous@exemple.com",
+    "phSubject": "Demande de projet",
+    "phMessage": "Parlez-moi de votre projet…",
+    "send": "SEND.message()",
+    "snackOpen": "Ouverture de votre messagerie… Le message est aussi copié dans le presse-papiers.",
+    "snackDismiss": "Fermer"
+  },
+  "footer": {
+    "tagline": "Développeur full-stack & analyste, produits numériques scalables. Certifié PSPO I, 5+ ans d’expérience.",
+    "statusReady": "ready",
+    "company": "// Société",
+    "navigate": "// Navigation",
+    "connect": "// Réseaux",
+    "about": "À propos",
+    "certifications": "Certifications",
+    "services": "Services",
+    "stack": "Stack technique",
+    "projects": "Projets",
+    "contact": "Contact",
+    "li": "LinkedIn",
+    "mail": "Email",
+    "backTop": "HAUT_DE_PAGE",
+    "rights": "© {{year}} Fatih Akman. Tous droits réservés.",
+    "built": "Réalisé avec Angular + Tailwind + animations CSS"
+  }
+}

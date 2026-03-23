@@ -41,10 +41,62 @@
   opacity: 0;
 }
 
-.hero-console-stdout {
-  text-shadow:
-    0 0 20px rgba(74, 222, 128, 0.25),
-    0 0 40px rgba(74, 222, 128, 0.08);
+.hero-console--crt {
+  box-shadow:
+    0 0 0 1px rgba(74, 222, 128, 0.08),
+    0 0 42px -8px rgba(74, 222, 128, 0.22),
+    inset 0 0 80px rgba(0, 0, 0, 0.45);
+  animation: terminalCrtBreath 5s ease-in-out infinite;
+}
+
+@keyframes terminalCrtBreath {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px rgba(74, 222, 128, 0.08),
+      0 0 42px -8px rgba(74, 222, 128, 0.22),
+      inset 0 0 80px rgba(0, 0, 0, 0.45);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(74, 222, 128, 0.14),
+      0 0 52px -6px rgba(74, 222, 128, 0.3),
+      inset 0 0 90px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.hero-console-titlebar--terminal {
+  box-shadow: inset 0 -1px 0 rgba(74, 222, 128, 0.12);
+}
+
+/* `cat` output: plain terminal foreground (no CRT green glow on file content). */
+.hero-console-stdout-plain.hero-console-stdout {
+  text-shadow: none;
+}
+
+/* Letter-by-letter reveal for roles.txt lines */
+.hero-console-stdout--chars .hero-stdout-line {
+  min-height: 1.35em;
+}
+
+.hero-console-stdout--chars .hero-stdout-char {
+  display: inline-block;
+  animation: heroStdoutCharIn 0.14s ease-out forwards;
+}
+
+@keyframes heroStdoutCharIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.12em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-console-body--streaming .hero-console-stdout-plain.hero-console-stdout {
+  animation: none;
 }
 
 .hero-console-scanlines {
@@ -55,6 +107,30 @@
     rgba(0, 0, 0, 0.18) 2px,
     rgba(0, 0, 0, 0.18) 4px
   );
+}
+
+.hero-console-scanlines--crt {
+  opacity: 0.07;
+  mix-blend-mode: multiply;
+  animation: scanlineDrift 8s linear infinite;
+}
+
+@keyframes scanlineDrift {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}
+
+.hero-console-vignette {
+  background: radial-gradient(
+    ellipse 85% 75% at 50% 45%,
+    transparent 0%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  pointer-events: none;
 }
 
 .hero-console-cursor {
@@ -70,7 +146,7 @@
 
 .hero-console-stdout-stream {
   scrollbar-width: thin;
-  scrollbar-color: rgba(74, 222, 128, 0.35) transparent;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
 
 .hero-console-stdout-stream::-webkit-scrollbar {
@@ -78,12 +154,18 @@
 }
 
 .hero-console-stdout-stream::-webkit-scrollbar-thumb {
-  background: rgba(74, 222, 128, 0.3);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 3px;
 }
 
 .hero-console-cursor-out {
   box-shadow: 0 0 10px rgba(74, 222, 128, 0.6);
+}
+
+/* Block cursor while typing file contents (matches light text on dark bg). */
+.hero-console-cursor-out--stdout {
+  background-color: rgba(243, 244, 246, 0.92);
+  box-shadow: none;
 }
 
 /* Solid caret while text is streaming; blink only when idle (see TS). */
@@ -98,6 +180,31 @@
   animation: consoleCursorBlink 1s steps(1, end) infinite;
 }
 
+.hero-console-cursor-idle {
+  width: 0.5em;
+  max-width: 11px;
+  height: 1.1em;
+  margin-left: 2px;
+  background-color: rgba(74, 222, 128, 0.85);
+  box-shadow: 0 0 12px rgba(74, 222, 128, 0.55);
+  animation: consoleCursorBlink 1.15s steps(1, end) infinite;
+}
+
+.hero-idle-prompt {
+  animation: idlePromptIn 0.35s ease-out forwards;
+}
+
+@keyframes idlePromptIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes consoleCursorBlink {
   0%,
   49% {
@@ -110,7 +217,30 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero-console-stdout--chars .hero-stdout-char {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
   .hero-console-cursor {
+    animation: none;
+    opacity: 1;
+  }
+
+  .hero-console--crt {
+    animation: none;
+  }
+
+  .hero-console-scanlines--crt {
+    animation: none;
+  }
+
+  .hero-console-body--streaming .hero-console-stdout {
+    animation: none;
+  }
+
+  .hero-idle-prompt {
     animation: none;
     opacity: 1;
   }

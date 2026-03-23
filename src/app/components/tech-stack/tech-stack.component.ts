@@ -1,5 +1,6 @@
 import { NgClass } from '@angular/common';
 import { Component, signal } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { InViewDirective } from '../../core/in-view.directive';
 
 type TechEntry = {
@@ -8,6 +9,8 @@ type TechEntry = {
   color: string;
   /** Simple Icons slug when using CDN */
   iconSlug?: string;
+  /** 6-char hex without `#` for https://cdn.simpleicons.org/{slug}/{color} (e.g. white on dark UI). */
+  iconCdnColor?: string;
   /** Local or absolute image URL (e.g. Polar.sh — not on Simple Icons CDN). */
   iconSrc?: string;
 };
@@ -15,7 +18,7 @@ type TechEntry = {
 @Component({
   selector: 'app-tech-stack',
   standalone: true,
-  imports: [NgClass, InViewDirective],
+  imports: [NgClass, InViewDirective, TranslatePipe],
   templateUrl: './tech-stack.component.html',
   styleUrl: './tech-stack.component.css',
 })
@@ -65,6 +68,12 @@ export class TechStackComponent {
       iconSlug: 'mui',
     },
     {
+      name: 'Bootstrap',
+      category: 'frontend',
+      color: 'text-purple-500',
+      iconSlug: 'bootstrap',
+    },
+    {
       name: 'Node.js',
       category: 'backend',
       color: 'text-green-400',
@@ -105,7 +114,7 @@ export class TechStackComponent {
       name: 'IBM i DB2',
       category: 'database',
       color: 'text-cyan-400',
-      iconSlug: 'ibm',
+      iconSrc: '/icons/ibm-db2.png',
     },
     { name: 'Figma', category: 'tool', color: 'text-purple-400', iconSlug: 'figma' },
     { name: 'Git', category: 'tool', color: 'text-orange-500', iconSlug: 'git' },
@@ -164,6 +173,7 @@ export class TechStackComponent {
       category: 'wallet',
       color: 'text-neutral-200',
       iconSlug: 'apple',
+      iconCdnColor: 'ffffff',
     },
     {
       name: 'Google Wallet',
@@ -175,10 +185,19 @@ export class TechStackComponent {
 
   iconSrc(tech: TechEntry): string {
     if (tech.iconSrc) return tech.iconSrc;
-    return `https://cdn.simpleicons.org/${tech.iconSlug ?? 'github'}`;
+    const slug = tech.iconSlug ?? 'github';
+    if (tech.iconCdnColor) {
+      return `https://cdn.simpleicons.org/${slug}/${tech.iconCdnColor}`;
+    }
+    return `https://cdn.simpleicons.org/${slug}`;
   }
 
-  onInView(): void {
-    this.visible.set(true);
+  onInView(inside: boolean): void {
+    this.visible.set(inside);
+  }
+
+  techItemDelayMs(index: number): number {
+    const n = this.technologies.length;
+    return this.visible() ? index * 50 : (n - 1 - index) * 40;
   }
 }

@@ -1,0 +1,328 @@
+{
+  "meta": {
+    "title": "Fatih Akman — Full-stack ontwikkelaar & analist | fatih@ogf_solutions",
+    "description": "Freelance analist en full-stack ontwikkelaar. Angular, Go, PHP, Laravel, Flutter, enterprise data. PSPO I. Remote, kleine projecten.",
+    "ogLocale": "nl_BE"
+  },
+  "nav": {
+    "about": "OVER",
+    "certifications": "CERT",
+    "services": "DIENSTEN",
+    "stack": "STACK",
+    "projects": "PROJECTEN",
+    "contact": "CONTACT"
+  },
+  "header": {
+    "brand": "fatih@ogf_solutions",
+    "hireMe": "INHUUR_MIJ",
+    "menuToggle": "Toggle menu"
+  },
+  "lang": {
+    "en": "EN",
+    "fr": "FR",
+    "nl": "NL",
+    "tr": "TR"
+  },
+  "a11y": {
+    "language": "Taal",
+    "socialLinks": "Social profielen"
+  },
+  "hero": {
+    "pathPortfolio": "~/portfolio",
+    "pathIntro": "./introduce",
+    "constDev": "const developer =",
+    "consolePrompt": "fatih@ogf_solutions:~$ ",
+    "consoleTitle": "bash — ~/portfolio/roles.txt",
+    "consoleCmd": "cat roles.txt",
+    "stdout": {
+      "0": "Freelance",
+      "1": "Analist & full-stack ontwikkelaar",
+      "2": "Product Owner (PSPO I)"
+    },
+    "statYears": "Jr erv.",
+    "statTech": "Technologieën",
+    "statCert": "Gecertificeerd",
+    "ctaContact": "CONTACT.init()",
+    "ctaExplore": "EXPLORE.run()",
+    "portraitAlt": "Fatih Akman — full-stack ontwikkelaar & analist"
+  },
+  "about": {
+    "section": "Over mij",
+    "panelFile": "developer.ts",
+    "headline1": "SCHAALBARE",
+    "headline2": "DIGITALE OPLOSSINGEN",
+    "p1": "Ik werk mee aan een strategisch platform voor een toonaangevende Europese groothandelsgroep: architectuur, ontwikkeling, monitoring en productie-ondersteuning.",
+    "p2": "Ik verbind business en IT-teams door complexe requirements om te zetten in robuuste, schaalbare oplossingen.",
+    "p3": "Met 5+ jaar ervaring leverde ik full-stack apps met Go, PHP, Laravel, Angular en Flutter, met enterprise-databases zoals MySQL, IBM i DB2 en PostgreSQL.",
+    "statusLine": "Remote · alleen kleine projecten",
+    "code": {
+      "0": "class Developer {",
+      "1": "",
+      "2": "    constructor() {",
+      "3": "        this.name = 'Fatih Akman';",
+      "4": "        this.role = 'Full-stack ontwikkelaar & analist';",
+      "5": "        this.certification = 'PSPO I';",
+      "6": "        this.experience = '5+ years';",
+      "7": "    }",
+      "8": "",
+      "9": "    getCurrentProject() {",
+      "10": "        return {",
+      "11": "            client: 'Europese groothandel',",
+      "12": "            type: 'Strategisch platform',",
+      "13": "            responsibilities: [",
+      "14": "                'Architectuur & ontwikkeling',",
+      "15": "                'Monitoring & support',",
+      "16": "                'Bedrijfsbehoeften vertalen naar technische oplossingen',",
+      "17": "            ],",
+      "18": "        };",
+      "19": "    }",
+      "20": "",
+      "21": "}"
+    }
+  },
+  "services": {
+    "section": "Diensten",
+    "headline1": "WAT IK",
+    "headline2": "KAN",
+    "fullstack": {
+      "title": "Full-stack ontwikkeling",
+      "command": "dev.build()",
+      "description": "End-to-end webapplicaties met React, Angular, Node.js, PHP, Laravel en Go.",
+      "tags": "Frontend|Backend|API"
+    },
+    "apicustom": {
+      "title": "API’s op maat",
+      "command": "api.custom()",
+      "description": "Ontwerp en oplevering van HTTP-API’s op maat: REST of GraphQL, auth, versioning, documentatie (OpenAPI), integratie met bestaande systemen.",
+      "tags": "REST|GraphQL|OpenAPI|Integration"
+    },
+    "mobile": {
+      "title": "Mobiele ontwikkeling",
+      "command": "mobile.deploy()",
+      "description": "Cross-platform apps met Flutter, Ionic en native iOS met Swift.",
+      "tags": "iOS|Android|Cross-platform"
+    },
+    "database": {
+      "title": "Database-architectuur",
+      "command": "db.optimize()",
+      "description": "Ontwerp en optimalisatie voor MySQL, PostgreSQL en IBM i DB2.",
+      "tags": "SQL|NoSQL|Performance"
+    },
+    "architecture": {
+      "title": "Systeemarchitectuur",
+      "command": "sys.scale()",
+      "description": "Schaalbare architectuur met monitoring en productie-ondersteuning.",
+      "tags": "Cloud|DevOps|Monitoring"
+    },
+    "analysis": {
+      "title": "Businessanalyse",
+      "command": "analyze.requirements()",
+      "description": "Bedrijfsbehoeften vertalen naar technische oplossingen.",
+      "tags": "Strategy|Planning|Documentation"
+    },
+    "product": {
+      "title": "Product ownership",
+      "command": "product.manage()",
+      "description": "PSPO I gecertificeerd, brug tussen stakeholders en development.",
+      "tags": "Agile|Scrum|Leadership"
+    },
+    "automation": {
+      "title": "Automatisering & n8n",
+      "command": "automate.workflows()",
+      "description": "Workflow-automatisering met n8n: CRM’s, API’s, notificaties en interne tools.",
+      "tags": "n8n|Integrations|APIs|Ops"
+    },
+    "ai": {
+      "title": "AI-automatisering",
+      "command": "ai.orchestrate()",
+      "description": "LLM-pipelines: samenvatting, classificatie, routing en copilots in uw stack.",
+      "tags": "Mistral|LLMs|RAG|Prompting"
+    },
+    "bots": {
+      "title": "Bots & messaging",
+      "command": "bot.deploy()",
+      "description": "Chatbots en taskbots op Telegram, webhooks en maatwerk backends.",
+      "tags": "Telegram|Discord|Webhooks|Chatbots"
+    },
+    "wallet": {
+      "title": "Loyalty & wallet",
+      "command": "loyalty.wallet()",
+      "description": "Digitale loyaliteitsprogramma’s: Apple Wallet & Google Wallet, met iOS- en Android-apps.",
+      "tags": "iOS|Android|Wallet|Retail"
+    }
+  },
+  "projects": {
+    "section": "Projecten",
+    "headline1": "SELECTIE",
+    "headline2": "WERK",
+    "sub": "Tijdlijn afgestemd op je PDF (2020–2023) en recentere projecten.",
+    "metaLine": "Full-stack & analist",
+    "chrono": "// Chrono.parallax()",
+    "countSingular": "project",
+    "countPlural": "projecten",
+    "wip": "WIP",
+    "nda": "NDA",
+    "pdfAria": "Portfolio-PDF openen — projecten t/m 2023",
+    "pdfQrAlt": "QR-code — portfolio-PDF projecten t/m 2023",
+    "pdfLabel": "// portfolio.archive.pdf",
+    "pdfBlurb": "Samenvattende PDF van projecten t/m 2023.",
+    "pdfLink": "Portfolio-PDF openen (2023)",
+    "entries": {
+      "ryflex": {
+        "name": "Ryflex",
+        "kind": "Applicatie · thuiszorg (België)",
+        "summary": "Vervangende applicatie voor thuiszorgdiensten in België."
+      },
+      "confidential-2025": {
+        "name": "Vertrouwelijk project — 2025",
+        "kind": "Retail (Europa) · 2025",
+        "summary": "NDA-project voor een grote Europese retailorganisatie. Geen details."
+      },
+      "lobi": {
+        "name": "Lobi",
+        "kind": "Android-applicatie",
+        "summary": "Persoonlijk werk in uitvoering. Android-app met Firebase."
+      },
+      "altrove-media": {
+        "name": "Altrove Media",
+        "kind": "Media / nieuws",
+        "summary": "Media die het nieuws vanuit een andere hoek belicht — Altrove."
+      },
+      "lubala": {
+        "name": "Lubala",
+        "kind": "WebApp",
+        "summary": "Flutter WebApp voor een advocatenkantoor in Kinshasa."
+      },
+      "havilaway": {
+        "name": "Havilaway",
+        "kind": "WebApp · IT Manager",
+        "summary": "Flutter WebApp voor administratieve en financiële ondersteuning in de zorg (Londen). Automatisering, SQL, Python."
+      },
+      "emsf": {
+        "name": "EMSF",
+        "kind": "Showcase WebApp",
+        "summary": "Site voor NGO Enfance Meurtrie Sans Frontière — straatkinderen en wezen."
+      },
+      "deenshop": {
+        "name": "DeenShop",
+        "kind": "Data-analyse",
+        "summary": "Python-tool voor een boekhandel: API-analyse, verkooptracking, winstverdeling."
+      },
+      "la-bombetta": {
+        "name": "La Bombetta",
+        "kind": "WebApp",
+        "summary": "Site voor Italiaans restaurant La Bombetta, Grand Sablon — Brussel."
+      },
+      "kace": {
+        "name": "Kace",
+        "kind": "E-commerce WebApp",
+        "summary": "T-shirtshop met focus op Charleroi."
+      },
+      "tipstreet": {
+        "name": "TipStreet",
+        "kind": "Android-applicatie",
+        "summary": "Sportweddenschappen-app: Firebase, bankroll, geschiedenis, Stripe-betalingen."
+      }
+    }
+  },
+  "certs": {
+    "section": "Certificeringen",
+    "headline1": "BEWIJZEN",
+    "headline2": "& VERTROUWEN",
+    "issued": "Uitgegeven",
+    "expires": "Verloopt",
+    "id": "ID",
+    "verifyHint": "Verificatie via het portaal van de uitgever.",
+    "verifyFallback": "Verifiëren",
+    "ariaLogoExternal": "{{issuer}} — {{alt}} (externe link)",
+    "items": {
+      "180944_10122025": {
+        "issuerShort": "ANSSI",
+        "issuer": "ANSSI — Franse nationale cyberbeveiligingsdienst",
+        "title": "Inleiding tot cybersecurity",
+        "issued": "dec 2025",
+        "expires": "dec 2035",
+        "category": "Cybersecurity",
+        "issuerLogoAlt": "ANSSI-logo"
+      },
+      "66a5fc98-e77c-433b-8826-86a75885e380": {
+        "issuerShort": "Scrum.org",
+        "issuer": "Scrum.org",
+        "title": "Professional Scrum Product Owner™ I (PSPO I)",
+        "issued": "mei 2025",
+        "expires": "mei 2028",
+        "verifyLabel": "Scrum.org — PSPO I",
+        "issuerLogoAlt": "Scrum.org"
+      }
+    }
+  },
+  "tech": {
+    "section": "Techstack",
+    "headline1": "TOOLS &",
+    "headline2": "TECHNOLOGIEËN",
+    "stackOpen": "stack = [",
+    "stackClose": "];",
+    "logoAlt": "{{name}} logo",
+    "categories": {
+      "language": "taal",
+      "frontend": "frontend",
+      "backend": "backend",
+      "database": "database",
+      "tool": "tool",
+      "mobile": "mobile",
+      "automation": "automatisering",
+      "ai": "ai",
+      "payments": "betalingen",
+      "wallet": "wallet"
+    },
+    "stat1": "Beheerste technologieën",
+    "stat2": "Full-stack aanpak",
+    "stat3": "Blijvend leren"
+  },
+  "contact": {
+    "section": "Contact",
+    "headline1": "LATEN WE",
+    "headline2": "IETS BOUWEN",
+    "email": "EMAIL",
+    "location": "LOCATION",
+    "locationPrefix": "Alleen remote — momenteel ",
+    "locationEmphasis": "kleine projecten",
+    "status": "STATUS",
+    "statusBody": "Open voor kleine remote opdrachten",
+    "blurbBefore": "Full-stack ontwikkelaar, analist of producthelderheid nodig voor een ",
+    "blurbEmphasis": "klein",
+    "blurbAfter": " remote project? Beperkte capaciteit — stuur een korte briefing.",
+    "responseTime": "< 24 hours",
+    "responseKey": "response_time",
+    "formTitle": "contact.form",
+    "name": "Naam *",
+    "emailLabel": "E-mail *",
+    "subject": "Onderwerp *",
+    "message": "Bericht *",
+    "phName": "Jan Jansen",
+    "phEmail": "jij@voorbeeld.com",
+    "phSubject": "Projectvraag",
+    "phMessage": "Vertel over je project…",
+    "send": "SEND.message()",
+    "snackOpen": "Je mailapp wordt geopend… Bericht ook naar klembord gekopieerd.",
+    "snackDismiss": "Sluiten"
+  },
+  "footer": {
+    "tagline": "Full-stack ontwikkelaar & analist voor schaalbare digitale producten. PSPO I, 5+ jaar ervaring.",
+    "statusReady": "ready",
+    "company": "// Bedrijf",
+    "navigate": "// Navigatie",
+    "connect": "// Social",
+    "about": "Over",
+    "certifications": "Certificeringen",
+    "services": "Diensten",
+    "stack": "Techstack",
+    "projects": "Projecten",
+    "contact": "Contact",
+    "li": "LinkedIn",
+    "mail": "Email",
+    "backTop": "NAAR_BOVEN",
+    "rights": "© {{year}} Fatih Akman. Alle rechten voorbehouden.",
+    "built": "Gebouwd met Angular + Tailwind + CSS-animaties"
+  }
+}

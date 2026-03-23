@@ -5,58 +5,158 @@
   }"
   class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 header-enter"
 >
-  <div class="max-w-7xl mx-auto px-4 py-4">
-    <div class="flex items-center justify-between">
+  <div
+    class="max-w-7xl mx-auto pb-4 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] pt-[max(1rem,env(safe-area-inset-top))]"
+  >
+    <div class="flex items-center justify-between gap-2">
       <button
         type="button"
         (click)="scrollToTop()"
-        class="flex items-center gap-2 text-white hover:text-green-400 transition-colors group focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-2 rounded-sm"
+        class="flex items-center gap-2.5 text-white hover:text-green-400 transition-colors group focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-2 rounded-sm min-w-0"
       >
-        <ng-icon
-          name="lucide-terminal"
-          class="text-green-400 group-hover:rotate-12 transition-transform inline-block"
-          size="20"
+        <img
+          src="/logo.svg"
+          width="36"
+          height="36"
+          class="h-8 w-8 sm:h-9 sm:w-9 shrink-0 rounded-lg object-contain ring-1 ring-gray-800/90 group-hover:ring-green-500/40 transition-[transform,box-shadow] group-hover:-rotate-6"
+          alt=""
+          decoding="async"
         />
-        <span class="font-mono font-bold tracking-tighter text-sm sm:text-base md:text-lg">
-          FATIH.OGF Solutions
+        <span class="font-mono font-bold tracking-tighter text-sm sm:text-base md:text-lg truncate">
+          {{ 'header.brand' | translate }}
         </span>
       </button>
 
-      <nav class="hidden md:flex items-center gap-8">
+      <nav class="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8 shrink-0">
         @for (link of navLinks; track link.id) {
           <button
             type="button"
             (click)="scrollToSection(link.id)"
             class="nav-link relative text-gray-400 hover:text-white transition-colors font-mono text-sm group focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-2 rounded-sm"
           >
-            {{ link.label }}
+            {{ link.labelKey | translate }}
             <span class="nav-underline"></span>
           </button>
         }
+        <div
+          class="hidden md:flex items-center gap-0.5 border-l border-gray-700 pl-3 ml-1 lg:pl-4"
+          role="group"
+          [attr.aria-label]="'a11y.socialLinks' | translate"
+        >
+          <a
+            [href]="social.linkedin"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-sm border border-transparent text-gray-400 transition-colors hover:border-gray-700 hover:text-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-400 focus-visible:outline-offset-2"
+            [attr.aria-label]="'footer.li' | translate"
+          >
+            <app-social-brand-logo brand="linkedin" />
+          </a>
+          <a
+            [href]="'mailto:' + contactEmail"
+            class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-sm border border-transparent text-gray-400 transition-colors hover:border-gray-700 hover:text-purple-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-purple-400 focus-visible:outline-offset-2"
+            [attr.aria-label]="'footer.mail' | translate"
+          >
+            <app-social-brand-logo brand="mail" />
+          </a>
+        </div>
+        <div
+          class="flex items-center gap-1 border-l border-gray-700 pl-4 ml-1"
+          role="group"
+          [attr.aria-label]="'a11y.language' | translate"
+        >
+          @for (lang of langs; track lang) {
+            <button
+              type="button"
+              (click)="pickLang(lang)"
+              class="font-mono text-xs px-2 py-1 rounded-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-2"
+              [class.text-green-400]="isActiveLang(lang)"
+              [class.bg-gray-900]="isActiveLang(lang)"
+              [class.text-gray-500]="!isActiveLang(lang)"
+              [class.hover:text-white]="!isActiveLang(lang)"
+            >
+              {{ 'lang.' + lang | translate }}
+            </button>
+          }
+        </div>
         <button
           type="button"
           (click)="scrollToSection('contact')"
-          class="px-6 py-2 bg-white text-black font-mono text-sm hover:bg-green-400 transition-colors hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
+          class="px-6 py-2 bg-white text-black font-mono text-sm hover:bg-green-400 transition-colors hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500 shrink-0"
         >
-          HIRE_ME
+          {{ 'header.hireMe' | translate }}
         </button>
       </nav>
 
-      <button
-        #menuToggle
-        type="button"
-        (click)="toggleMobile()"
-        class="md:hidden text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-2"
-        [attr.aria-expanded]="isMobileMenuOpen"
-        aria-controls="mobile-nav"
-        aria-label="Toggle menu"
-      >
-        @if (isMobileMenuOpen) {
-          <ng-icon name="lucide-x" size="24" />
-        } @else {
-          <ng-icon name="lucide-menu" size="24" />
-        }
-      </button>
+      <div class="flex items-center gap-1.5 shrink-0 md:gap-2">
+        <div
+          #langDropdownRoot
+          class="relative z-[60] md:hidden"
+        >
+          <button
+            #langDropdownTrigger
+            type="button"
+            id="lang-dropdown-trigger"
+            class="inline-flex min-h-[40px] min-w-[4.5rem] items-center justify-center gap-1 rounded-sm border border-gray-800 bg-black/30 px-2.5 font-mono text-xs text-white transition-colors hover:border-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-2 sm:min-w-[5rem]"
+            [attr.aria-expanded]="isLangDropdownOpen"
+            aria-haspopup="listbox"
+            aria-controls="lang-dropdown-list"
+            [attr.aria-label]="'a11y.language' | translate"
+            (click)="toggleLangDropdown()"
+          >
+            <span class="tabular-nums">{{
+              ('lang.' + language.currentLang) | translate
+            }}</span>
+            <ng-icon
+              name="lucide-chevron-down"
+              size="16"
+              class="shrink-0 text-gray-400 transition-transform"
+              [class.rotate-180]="isLangDropdownOpen"
+            />
+          </button>
+          @if (isLangDropdownOpen) {
+            <ul
+              id="lang-dropdown-list"
+              role="listbox"
+              class="absolute right-0 top-full z-[70] mt-1 min-w-[9rem] list-none rounded-sm border border-gray-800 bg-zinc-950 py-1 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.85)] m-0 p-0"
+              [attr.aria-label]="'a11y.language' | translate"
+            >
+              @for (lang of langs; track lang) {
+                <li role="presentation" class="m-0 p-0">
+                  <button
+                    type="button"
+                    role="option"
+                    [attr.aria-selected]="isActiveLang(lang)"
+                    class="w-full px-3 py-2.5 text-left font-mono text-sm transition-colors hover:bg-gray-900/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-green-400"
+                    [class.bg-gray-900]="isActiveLang(lang)"
+                    [class.text-green-400]="isActiveLang(lang)"
+                    [class.text-gray-300]="!isActiveLang(lang)"
+                    (click)="selectLangMobile(lang)"
+                  >
+                    {{ 'lang.' + lang | translate }}
+                  </button>
+                </li>
+              }
+            </ul>
+          }
+        </div>
+
+        <button
+          #menuToggle
+          type="button"
+          (click)="toggleMobile()"
+          class="md:hidden text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-2 shrink-0 min-h-[40px] min-w-[40px] inline-flex items-center justify-center"
+          [attr.aria-expanded]="isMobileMenuOpen"
+          aria-controls="mobile-nav"
+          [attr.aria-label]="'header.menuToggle' | translate"
+        >
+          @if (isMobileMenuOpen) {
+            <ng-icon name="lucide-x" size="24" />
+          } @else {
+            <ng-icon name="lucide-menu" size="24" />
+          }
+        </button>
+      </div>
     </div>
 
     @if (isMobileMenuOpen) {
@@ -74,15 +174,37 @@
               class="text-left text-gray-400 hover:text-white transition-colors font-mono text-sm py-2 hover:pl-2 transition-all mobile-nav-item focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-2 rounded-sm"
               [style.animation-delay.ms]="i * 100"
             >
-              <span class="text-green-400">&gt;</span> {{ link.label }}
+              <span class="text-green-400">&gt;</span> {{ link.labelKey | translate }}
             </button>
           }
+          <div
+            class="flex flex-wrap items-center justify-center gap-3 border-t border-gray-800 pt-4 mt-1"
+            role="group"
+            [attr.aria-label]="'a11y.socialLinks' | translate"
+          >
+            <a
+              [href]="social.linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-gray-800 text-gray-300 transition-colors hover:border-blue-400 hover:text-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-400 focus-visible:outline-offset-2"
+              [attr.aria-label]="'footer.li' | translate"
+            >
+              <app-social-brand-logo brand="linkedin" [pixelSize]="22" />
+            </a>
+            <a
+              [href]="'mailto:' + contactEmail"
+              class="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-gray-800 text-gray-300 transition-colors hover:border-purple-400 hover:text-purple-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-purple-400 focus-visible:outline-offset-2"
+              [attr.aria-label]="'footer.mail' | translate"
+            >
+              <app-social-brand-logo brand="mail" [pixelSize]="22" />
+            </a>
+          </div>
           <button
             type="button"
             (click)="scrollToSection('contact')"
             class="w-full px-6 py-3 bg-white text-black font-mono text-sm hover:bg-green-400 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
           >
-            HIRE_ME
+            {{ 'header.hireMe' | translate }}
           </button>
         </div>
       </nav>

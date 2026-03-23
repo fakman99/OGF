@@ -1,41 +1,42 @@
 <section
   id="projects"
   appInView
-  (visible)="onInView()"
+  (inView)="onInView($event)"
   class="min-h-screen py-20 px-4 bg-zinc-950 text-white border-t border-gray-900"
 >
   <div class="max-w-6xl mx-auto">
     <div class="projects-head" [class.projects-visible]="visible()">
       <div class="projects-header-piece font-mono text-sm text-green-400 mb-8">
-        <span class="text-gray-600">// </span>Projets
+        <span class="text-gray-600">// </span>{{ 'projects.section' | translate }}
       </div>
 
-      <h2 class="projects-header-piece text-5xl md:text-7xl font-black mb-4 tracking-tight">
-        SELECTED<br />
+      <h2
+        class="projects-header-piece mb-4 text-4xl font-black tracking-tight sm:text-5xl md:text-7xl"
+      >
+        {{ 'projects.headline1' | translate }}<br />
         <span
           class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500"
         >
-          WORK
+          {{ 'projects.headline2' | translate }}
         </span>
       </h2>
 
       <p class="projects-header-piece font-mono text-sm text-gray-500 mb-2 max-w-2xl leading-relaxed">
         <span class="text-purple-400/90">~/portfolio/timeline</span>
-        — chronologie alignée sur ton PDF (slides 2020–2023) et projets plus récents.
+        — {{ 'projects.sub' | translate }}
       </p>
       <p class="projects-header-piece font-mono text-xs text-gray-600 mb-14">
         {{ '{' }} source: <span class="text-gray-500">timeline.pdf</span>, role:
-        <span class="text-green-400/80">Full-Stack &amp; Analyst</span>
+        <span class="text-green-400/80">{{ 'projects.metaLine' | translate }}</span>
         {{ '}' }}
       </p>
 
-      <!-- PDF-style visual timeline (replaces static slide images) -->
       <div class="timeline-section relative">
         <div
           class="projects-chrono-label font-mono text-xs text-gray-600 mb-8 uppercase tracking-wider"
           [class.projects-chrono-visible]="visible()"
         >
-          // Chrono.parallax()
+          {{ 'projects.chrono' | translate }}
         </div>
 
         <div class="timeline-root relative">
@@ -50,12 +51,12 @@
               <li
                 class="timeline-year-row relative pl-10 sm:pl-14 pb-14 last:pb-2"
                 [class.timeline-row-visible]="visible()"
-                [style.transition-delay.ms]="visible() ? gi * 90 : 0"
+                [style.transition-delay.ms]="timelineRowDelayMs(gi)"
               >
                 <span
                   class="timeline-dot"
                   [class.timeline-dot-visible]="visible()"
-                  [style.transition-delay.ms]="visible() ? gi * 90 + 40 : 0"
+                  [style.transition-delay.ms]="timelineDotDelayMs(gi)"
                   aria-hidden="true"
                 ></span>
 
@@ -69,41 +70,45 @@
                   </span>
                   <span class="font-mono text-xs text-gray-600 hidden sm:inline">
                     — {{ g.projects.length }}
-                    projet{{ g.projects.length > 1 ? 's' : '' }}
+                    {{
+                      g.projects.length > 1
+                        ? ('projects.countPlural' | translate)
+                        : ('projects.countSingular' | translate)
+                    }}
                   </span>
                 </div>
 
                 <div class="space-y-3 sm:pl-1">
-                  @for (p of g.projects; track p.name; let pi = $index) {
+                  @for (p of g.projects; track p.slug; let pi = $index) {
                     <div
                       class="timeline-card timeline-card-entrance border border-gray-800/90 bg-black/60 backdrop-blur-sm px-4 py-3 rounded-sm border-l-2 border-l-green-500/40 hover:border-l-green-400/80"
                       [class.timeline-card-visible]="visible()"
                       [style.transition-delay.ms]="
-                        visible() ? gi * 95 + pi * 70 + 140 : 0
+                        timelineCardDelayMs(gi, pi, g.projects.length)
                       "
                     >
                       <div class="flex flex-wrap items-center gap-2 gap-y-1 mb-1">
                         <span class="font-mono text-sm font-bold text-white">{{
-                          p.name
+                          ('projects.entries.' + p.slug + '.name') | translate
                         }}</span>
                         @if (p.wip) {
                           <span
                             class="font-mono text-[9px] uppercase px-1.5 py-0.5 border border-amber-600/50 text-amber-400/90"
-                            >WIP</span
+                            >{{ 'projects.wip' | translate }}</span
                           >
                         }
                         @if (p.confidential) {
                           <span
                             class="font-mono text-[9px] uppercase px-1.5 py-0.5 border border-gray-600 text-gray-500"
-                            >NDA</span
+                            >{{ 'projects.nda' | translate }}</span
                           >
                         }
                       </div>
                       <div class="font-mono text-[11px] text-gray-500 mb-1">
-                        {{ p.kind }} · {{ p.years }}
+                        {{ ('projects.entries.' + p.slug + '.kind') | translate }} · {{ p.years }}
                       </div>
                       <p class="text-xs text-gray-400 leading-relaxed line-clamp-3 sm:line-clamp-none">
-                        {{ p.summary }}
+                        {{ ('projects.entries.' + p.slug + '.summary') | translate }}
                       </p>
                       @if (p.href) {
                         <a
@@ -125,9 +130,7 @@
                     class="timeline-pdf-block mt-6 sm:pl-1 border border-gray-800 bg-black/50 p-4 sm:p-5 rounded-sm font-mono border-l-2 border-l-purple-500/30"
                     [class.timeline-pdf-visible]="visible()"
                     [style.transition-delay.ms]="
-                      visible()
-                        ? gi * 95 + g.projects.length * 70 + 200
-                        : 0
+                      timelinePdfDelayMs(gi, g.projects.length)
                     "
                   >
                     <div
@@ -138,11 +141,11 @@
                         target="_blank"
                         rel="noopener noreferrer"
                         class="shrink-0 flex justify-start pl-4 sm:pl-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-purple-400 focus-visible:outline-offset-2 rounded-sm"
-                        aria-label="Ouvrir le portfolio PDF — projets jusqu’en 2023"
+                        [attr.aria-label]="'projects.pdfAria' | translate"
                       >
                         <img
                           [src]="portfolioPdf2023.qrSrc"
-                          alt="QR code — portfolio PDF projets jusqu’en 2023"
+                          [attr.alt]="'projects.pdfQrAlt' | translate"
                           width="128"
                           height="128"
                           class="w-28 h-28 sm:w-32 sm:h-32 object-contain bg-white p-1.5 rounded-sm"
@@ -152,11 +155,10 @@
                       </a>
                       <div class="min-w-0 flex-1 space-y-2 text-center sm:text-left">
                         <div class="text-xs text-gray-500 uppercase tracking-wider">
-                          // portfolio.archive.pdf
+                          {{ 'projects.pdfLabel' | translate }}
                         </div>
                         <p class="text-sm text-gray-400 leading-relaxed">
-                          PDF de synthèse des projets jusqu’en 2023 — entre les entrées 2024 et la suite de la
-                          chronologie.
+                          {{ 'projects.pdfBlurb' | translate }}
                         </p>
                         <a
                           [href]="portfolioPdf2023.href"
@@ -165,7 +167,7 @@
                           class="inline-flex items-center justify-center sm:justify-start gap-2 font-mono text-sm text-green-400 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-2 transition-colors"
                         >
                           <ng-icon name="lucide-external-link" size="14" />
-                          Ouvrir le portfolio PDF (2023)
+                          {{ 'projects.pdfLink' | translate }}
                         </a>
                       </div>
                     </div>

@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, inject } from '@angular/core';
+import { LanguageService } from './core/language.service';
 import { AboutComponent } from './components/about/about.component';
 import { CertificationsComponent } from './components/certifications/certifications.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
@@ -31,6 +32,7 @@ import { ScrollService } from './core/scroll.service';
 })
 export class AppComponent implements AfterViewInit {
   private readonly scroll = inject(ScrollService);
+  private readonly _language = inject(LanguageService);
 
   ngAfterViewInit(): void {
     queueMicrotask(() => {

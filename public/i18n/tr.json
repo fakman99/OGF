@@ -1,0 +1,328 @@
+{
+  "meta": {
+    "title": "Fatih Akman — Full-stack geliştirici & analist | fatih@ogf_solutions",
+    "description": "Serbest analist ve full-stack geliştirici. Angular, Go, PHP, Laravel, Flutter, kurumsal veri. PSPO I. Uzaktan, küçük projeler.",
+    "ogLocale": "tr_TR"
+  },
+  "nav": {
+    "about": "HAKKIMDA",
+    "certifications": "SERTİFİKALAR",
+    "services": "HİZMETLER",
+    "stack": "STACK",
+    "projects": "PROJELER",
+    "contact": "İLETİŞİM"
+  },
+  "header": {
+    "brand": "fatih@ogf_solutions",
+    "hireMe": "İŞE_AL",
+    "menuToggle": "Toggle menu"
+  },
+  "lang": {
+    "en": "EN",
+    "fr": "FR",
+    "nl": "NL",
+    "tr": "TR"
+  },
+  "a11y": {
+    "language": "Dil",
+    "socialLinks": "Sosyal profiller"
+  },
+  "hero": {
+    "pathPortfolio": "~/portfolio",
+    "pathIntro": "./introduce",
+    "constDev": "const developer =",
+    "consolePrompt": "fatih@ogf_solutions:~$ ",
+    "consoleTitle": "bash — ~/portfolio/roles.txt",
+    "consoleCmd": "cat roles.txt",
+    "stdout": {
+      "0": "Freelance",
+      "1": "Analist & full-stack geliştirici",
+      "2": "Product Owner (PSPO I)"
+    },
+    "statYears": "Yıl deneyim",
+    "statTech": "Teknolojiler",
+    "statCert": "Sertifikalı",
+    "ctaContact": "CONTACT.init()",
+    "ctaExplore": "EXPLORE.run()",
+    "portraitAlt": "Fatih Akman — full-stack geliştirici & analist"
+  },
+  "about": {
+    "section": "Hakkımda",
+    "panelFile": "developer.ts",
+    "headline1": "ÖLÇEKLENEBİLİR",
+    "headline2": "DİJİTAL ÇÖZÜMLER",
+    "p1": "Önde gelen bir Avrupa toptan satış grubu için stratejik bir platforma katkıda bulunuyorum: mimari, geliştirme, izleme ve prodüksiyon desteği.",
+    "p2": "İş paydaşları ile teknik ekipler arasında köprü kurarak karmaşık gereksinimleri sağlam, ölçeklenebilir çözümlere dönüştürüyorum.",
+    "p3": "5+ yıllık deneyimle Go, PHP, Laravel, Angular ve Flutter ile full-stack uygulamalar; MySQL, IBM i DB2 ve PostgreSQL gibi kurumsal veritabanları üzerinde çalıştım.",
+    "statusLine": "Uzaktan · yalnızca küçük projeler",
+    "code": {
+      "0": "class Developer {",
+      "1": "",
+      "2": "    constructor() {",
+      "3": "        this.name = 'Fatih Akman';",
+      "4": "        this.role = 'Full-stack geliştirici & analist';",
+      "5": "        this.certification = 'PSPO I';",
+      "6": "        this.experience = '5+ years';",
+      "7": "    }",
+      "8": "",
+      "9": "    getCurrentProject() {",
+      "10": "        return {",
+      "11": "            client: 'Avrupa toptan satış',",
+      "12": "            type: 'Stratejik platform',",
+      "13": "            responsibilities: [",
+      "14": "                'Mimari & geliştirme',",
+      "15": "                'İzleme & destek',",
+      "16": "                'İş ihtiyaçlarını teknik çözümlere dönüştürme',",
+      "17": "            ],",
+      "18": "        };",
+      "19": "    }",
+      "20": "",
+      "21": "}"
+    }
+  },
+  "services": {
+    "section": "Hizmetler",
+    "headline1": "NELER",
+    "headline2": "YAPABİLİRİM",
+    "fullstack": {
+      "title": "Full-stack geliştirme",
+      "command": "dev.build()",
+      "description": "React, Angular, Node.js, PHP, Laravel ve Go ile uçtan uca web uygulamaları.",
+      "tags": "Frontend|Backend|API"
+    },
+    "apicustom": {
+      "title": "Özel API’ler",
+      "command": "api.custom()",
+      "description": "REST veya GraphQL, kimlik doğrulama, sürümleme, OpenAPI dokümantasyonu ve entegrasyon.",
+      "tags": "REST|GraphQL|OpenAPI|Integration"
+    },
+    "mobile": {
+      "title": "Mobil geliştirme",
+      "command": "mobile.deploy()",
+      "description": "Flutter, Ionic ve Swift ile native iOS dahil çapraz platform.",
+      "tags": "iOS|Android|Cross-platform"
+    },
+    "database": {
+      "title": "Veritabanı mimarisi",
+      "command": "db.optimize()",
+      "description": "MySQL, PostgreSQL ve IBM i DB2 için tasarım ve optimizasyon.",
+      "tags": "SQL|NoSQL|Performance"
+    },
+    "architecture": {
+      "title": "Sistem mimarisi",
+      "command": "sys.scale()",
+      "description": "İzleme ve prodüksiyon desteği ile ölçeklenebilir mimari.",
+      "tags": "Cloud|DevOps|Monitoring"
+    },
+    "analysis": {
+      "title": "İş analizi",
+      "command": "analyze.requirements()",
+      "description": "İş ihtiyaçlarını teknik çözümlere çevirme.",
+      "tags": "Strategy|Planning|Documentation"
+    },
+    "product": {
+      "title": "Ürün sahipliği",
+      "command": "product.manage()",
+      "description": "PSPO I sertifikalı; paydaşlar ve geliştirme ekipleri arasında köprü.",
+      "tags": "Agile|Scrum|Leadership"
+    },
+    "automation": {
+      "title": "İş otomasyonu & n8n",
+      "command": "automate.workflows()",
+      "description": "n8n ile CRM, API, bildirim ve iç araç otomasyonu; KOBİ ve kurumsal süreçler.",
+      "tags": "n8n|Integrations|APIs|Ops"
+    },
+    "ai": {
+      "title": "Yapay zekâ otomasyonu",
+      "command": "ai.orchestrate()",
+      "description": "LLM boru hatları: özetleme, sınıflandırma, yönlendirme, yardımcı asistanlar.",
+      "tags": "Mistral|LLMs|RAG|Prompting"
+    },
+    "bots": {
+      "title": "Botlar & mesajlaşma",
+      "command": "bot.deploy()",
+      "description": "Telegram, webhook ve özel backend üzerinde sohbet ve görev botları.",
+      "tags": "Telegram|Discord|Webhooks|Chatbots"
+    },
+    "wallet": {
+      "title": "Sadakat & cüzdan kartları",
+      "command": "loyalty.wallet()",
+      "description": "Apple Wallet ve Google Wallet geçişleri; işletmeler için iOS ve Android uygulamaları.",
+      "tags": "iOS|Android|Wallet|Retail"
+    }
+  },
+  "projects": {
+    "section": "Projeler",
+    "headline1": "SEÇİLMİŞ",
+    "headline2": "İŞLER",
+    "sub": "PDF’nizle (2020–2023 slaytları) hizalı zaman çizelgesi ve daha yeni işler.",
+    "metaLine": "Full-stack & analist",
+    "chrono": "// Chrono.parallax()",
+    "countSingular": "proje",
+    "countPlural": "proje",
+    "wip": "WIP",
+    "nda": "NDA",
+    "pdfAria": "Portfolyo PDF’ini aç — 2023’e kadar projeler",
+    "pdfQrAlt": "QR kod — 2023’e kadar portfolyo PDF projeleri",
+    "pdfLabel": "// portfolio.archive.pdf",
+    "pdfBlurb": "2023’e kadar projelerin özet PDF’i.",
+    "pdfLink": "Portfolyo PDF’ini aç (2023)",
+    "entries": {
+      "ryflex": {
+        "name": "Ryflex",
+        "kind": "Uygulama · evde bakım (Belçika)",
+        "summary": "Belçika’daki evde bakım hizmetleri için yedek uygulama."
+      },
+      "confidential-2025": {
+        "name": "Gizli proje — 2025",
+        "kind": "Perakende (Avrupa) · 2025",
+        "summary": "Büyük bir Avrupa perakende şirketi için NDA altındaki proje. Detay yok."
+      },
+      "lobi": {
+        "name": "Lobi",
+        "kind": "Android uygulaması",
+        "summary": "Devam eden kişisel çalışma. Firebase ile Android uygulaması."
+      },
+      "altrove-media": {
+        "name": "Altrove Media",
+        "kind": "Medya / haber",
+        "summary": "Haberleri farklı açıdan ele alan medya — Altrove."
+      },
+      "lubala": {
+        "name": "Lubala",
+        "kind": "WebApp",
+        "summary": "Kinşasa’daki bir hukuk bürosu için Flutter WebApp."
+      },
+      "havilaway": {
+        "name": "Havilaway",
+        "kind": "WebApp · IT Manager",
+        "summary": "Londra’daki sağlık alanında idari ve mali yönetim için Flutter WebApp. Otomasyon, SQL, Python."
+      },
+      "emsf": {
+        "name": "EMSF",
+        "kind": "Tanıtım WebApp",
+        "summary": "Enfance Meurtrie Sans Frontière STK sitesi — sokak çocukları ve yetimler."
+      },
+      "deenshop": {
+        "name": "DeenShop",
+        "kind": "Veri analizi",
+        "summary": "Bir kitapçı için Python aracı: API analizi, satış takibi, kâr paylaşımı."
+      },
+      "la-bombetta": {
+        "name": "La Bombetta",
+        "kind": "WebApp",
+        "summary": "La Bombetta İtalyan restoranı sitesi — Grand Sablon, Brüksel."
+      },
+      "kace": {
+        "name": "Kace",
+        "kind": "E-ticaret WebApp",
+        "summary": "Charleroi’yu öne çıkaran tişört satış sitesi."
+      },
+      "tipstreet": {
+        "name": "TipStreet",
+        "kind": "Android uygulaması",
+        "summary": "Spor bahisleri uygulaması: Firebase, bankroll, geçmiş, Stripe ödemeleri."
+      }
+    }
+  },
+  "certs": {
+    "section": "Sertifikalar",
+    "headline1": "YETKİNLİKLER",
+    "headline2": "& GÜVEN",
+    "issued": "Veriliş",
+    "expires": "Bitiş",
+    "id": "ID",
+    "verifyHint": "Doğrulama, sertifikayı veren kurumun portalında.",
+    "verifyFallback": "Doğrula",
+    "ariaLogoExternal": "{{issuer}} — {{alt}} (dış bağlantı)",
+    "items": {
+      "180944_10122025": {
+        "issuerShort": "ANSSI",
+        "issuer": "ANSSI — Fransa Ulusal Siber Güvenlik Ajansı",
+        "title": "Siber güvenliğe giriş",
+        "issued": "Ara 2025",
+        "expires": "Ara 2035",
+        "category": "Siber güvenlik",
+        "issuerLogoAlt": "ANSSI logosu"
+      },
+      "66a5fc98-e77c-433b-8826-86a75885e380": {
+        "issuerShort": "Scrum.org",
+        "issuer": "Scrum.org",
+        "title": "Professional Scrum Product Owner™ I (PSPO I)",
+        "issued": "Mayıs 2025",
+        "expires": "Mayıs 2028",
+        "verifyLabel": "Scrum.org — PSPO I",
+        "issuerLogoAlt": "Scrum.org"
+      }
+    }
+  },
+  "tech": {
+    "section": "Teknoloji yığını",
+    "headline1": "ARAÇLAR &",
+    "headline2": "TEKNOLOJİLER",
+    "stackOpen": "stack = [",
+    "stackClose": "];",
+    "logoAlt": "{{name}} logo",
+    "categories": {
+      "language": "dil",
+      "frontend": "frontend",
+      "backend": "backend",
+      "database": "veritabanı",
+      "tool": "araç",
+      "mobile": "mobile",
+      "automation": "otomasyon",
+      "ai": "ai",
+      "payments": "ödemeler",
+      "wallet": "wallet"
+    },
+    "stat1": "Ustalık kazanılan teknolojiler",
+    "stat2": "Full-stack yaklaşım",
+    "stat3": "Sürekli öğrenme"
+  },
+  "contact": {
+    "section": "İletişim",
+    "headline1": "BİRLİKTE",
+    "headline2": "BİR ŞEY KURALIM",
+    "email": "EMAIL",
+    "location": "LOCATION",
+    "locationPrefix": "Yalnızca uzaktan — şu an ",
+    "locationEmphasis": "küçük projeler",
+    "status": "STATUS",
+    "statusBody": "Küçük uzaktan işlere açık",
+    "blurbBefore": "Uzaktan ",
+    "blurbEmphasis": "küçük",
+    "blurbAfter": " bir proje için full-stack geliştirici, analist veya ürün netliği mi gerekiyor? Şu an sınırlı uzaktan iş kabul ediyorum — kısa bir özet gönderin, uygun olup olmadığımı görelim.",
+    "responseTime": "< 24 hours",
+    "responseKey": "response_time",
+    "formTitle": "contact.form",
+    "name": "Ad *",
+    "emailLabel": "E-posta *",
+    "subject": "Konu *",
+    "message": "Mesaj *",
+    "phName": "Ali Yılmaz",
+    "phEmail": "siz@ornek.com",
+    "phSubject": "Proje talebi",
+    "phMessage": "Projenizden bahsedin…",
+    "send": "SEND.message()",
+    "snackOpen": "E-posta uygulamanız açılıyor… Mesaj yedek olarak panoya da kopyalandı.",
+    "snackDismiss": "Kapat"
+  },
+  "footer": {
+    "tagline": "Ölçeklenebilir dijital ürünler için full-stack geliştirici & analist. PSPO I, 5+ yıl deneyim.",
+    "statusReady": "ready",
+    "company": "// Şirket",
+    "navigate": "// Gezinme",
+    "connect": "// Sosyal",
+    "about": "Hakkımda",
+    "certifications": "Sertifikalar",
+    "services": "Hizmetler",
+    "stack": "Teknoloji yığını",
+    "projects": "Projeler",
+    "contact": "İletişim",
+    "li": "LinkedIn",
+    "mail": "Email",
+    "backTop": "YUKARI_DÖN",
+    "rights": "© {{year}} Fatih Akman. Tüm hakları saklıdır.",
+    "built": "Angular + Tailwind + CSS animasyonları ile oluşturuldu"
+  }
+}

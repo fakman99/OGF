@@ -1,7 +1,7 @@
 <section
   id="contact"
   appInView
-  (visible)="onInView()"
+  (inView)="onInView($event)"
   class="min-h-screen py-20 px-4 bg-black text-white relative overflow-hidden"
 >
   <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -21,15 +21,15 @@
   <div class="max-w-6xl mx-auto relative z-10">
     <div class="contact-head" [class.contact-visible]="visible()">
       <div class="font-mono text-sm text-green-400 mb-8">
-        <span class="text-gray-600">// </span>Get In Touch
+        <span class="text-gray-600">// </span>{{ 'contact.section' | translate }}
       </div>
 
-      <h2 class="text-5xl md:text-7xl font-black mb-16 tracking-tight">
-        LET'S BUILD<br />
+      <h2 class="mb-16 text-4xl font-black tracking-tight sm:text-5xl md:text-7xl">
+        {{ 'contact.headline1' | translate }}<br />
         <span
           class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500"
         >
-          SOMETHING GREAT
+          {{ 'contact.headline2' | translate }}
         </span>
       </h2>
 
@@ -38,14 +38,14 @@
           <div
             class="border border-gray-800 bg-zinc-950/50 p-6 backdrop-blur-sm contact-card"
             [class.contact-card-visible]="visible()"
-            style="transition-delay: 200ms"
+            [style.transition-delay.ms]="contactCardDelayMs(0)"
           >
             <div class="flex items-start gap-4">
-              <div class="text-green-400 mt-1">
-                <ng-icon name="lucide-mail" size="24" />
+              <div class="text-green-400 mt-1 shrink-0">
+                <app-social-brand-logo brand="mail" [pixelSize]="24" />
               </div>
               <div>
-                <div class="font-mono text-xs text-gray-500 mb-1">EMAIL</div>
+                <div class="font-mono text-xs text-gray-500 mb-1">{{ 'contact.email' | translate }}</div>
                 <a
                   class="text-white font-mono hover:text-green-400 transition-colors break-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-2 rounded-sm"
                   [href]="'mailto:' + contactEmail"
@@ -57,16 +57,17 @@
           <div
             class="border border-gray-800 bg-zinc-950/50 p-6 backdrop-blur-sm contact-card"
             [class.contact-card-visible]="visible()"
-            style="transition-delay: 300ms"
+            [style.transition-delay.ms]="contactCardDelayMs(1)"
           >
             <div class="flex items-start gap-4">
               <div class="text-blue-400 mt-1">
                 <ng-icon name="lucide-map-pin" size="24" />
               </div>
               <div>
-                <div class="font-mono text-xs text-gray-500 mb-1">LOCATION</div>
+                <div class="font-mono text-xs text-gray-500 mb-1">{{ 'contact.location' | translate }}</div>
                 <div class="text-white font-mono leading-relaxed">
-                  Remote only — currently taking <span class="text-green-400/90">small projects</span>
+                  {{ 'contact.locationPrefix' | translate
+                  }}<span class="text-green-400/90">{{ 'contact.locationEmphasis' | translate }}</span>
                 </div>
               </div>
             </div>
@@ -75,90 +76,101 @@
           <div
             class="border border-gray-800 bg-zinc-950/50 p-6 backdrop-blur-sm contact-card"
             [class.contact-card-visible]="visible()"
-            style="transition-delay: 400ms"
+            [style.transition-delay.ms]="contactCardDelayMs(2)"
           >
             <div class="flex items-start gap-4">
               <div class="text-purple-400 mt-1">
                 <ng-icon name="lucide-code" size="24" />
               </div>
               <div>
-                <div class="font-mono text-xs text-gray-500 mb-1">STATUS</div>
+                <div class="font-mono text-xs text-gray-500 mb-1">{{ 'contact.status' | translate }}</div>
                 <div class="flex items-center gap-2">
                   <span class="status-dot w-2 h-2 rounded-full bg-green-400 inline-block"></span>
-                  <span class="text-white font-mono">Open for small remote work</span>
+                  <span class="text-white font-mono">{{ 'contact.statusBody' | translate }}</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="pt-6 contact-blurb" [class.contact-blurb-visible]="visible()" style="transition-delay: 500ms">
+          <div
+            class="pt-6 contact-blurb"
+            [class.contact-blurb-visible]="visible()"
+            [style.transition-delay.ms]="contactBlurbDelayMs()"
+          >
             <p class="text-gray-400 leading-relaxed mb-4">
-              Need a full-stack developer, analyst, or product clarity on a
-              <span class="text-gray-300 font-medium">small</span> remote project? I'm taking limited remote engagements right now — send a short brief and we'll see if it's a fit.
+              {{ 'contact.blurbBefore' | translate
+              }}<span class="text-gray-300 font-medium">{{ 'contact.blurbEmphasis' | translate }}</span
+              >{{ 'contact.blurbAfter' | translate }}
             </p>
             <div class="font-mono text-xs text-gray-600">
-              {{ '{' }} response_time: <span class="text-green-400">&lt; 24 hours</span> {{ '}' }}
+              {{ '{' }} response_time:
+              <span class="text-green-400">{{ 'contact.responseTime' | translate }}</span>
+              {{ '}' }}
             </div>
           </div>
         </div>
 
-        <div class="contact-form-wrap" [class.contact-form-visible]="visible()" style="transition-delay: 300ms">
+        <div
+          class="contact-form-wrap"
+          [class.contact-form-visible]="visible()"
+          [style.transition-delay.ms]="contactFormWrapDelayMs()"
+        >
           <div class="border border-gray-800 bg-zinc-950/50 backdrop-blur-sm">
             <div class="border-b border-gray-800 p-4 flex items-center gap-2">
               <div class="w-3 h-3 rounded-full bg-red-500"></div>
               <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
               <div class="w-3 h-3 rounded-full bg-green-500"></div>
-              <span class="ml-2 text-gray-500 font-mono text-xs">contact.form</span>
+              <span class="ml-2 text-gray-500 font-mono text-xs">{{ 'contact.formTitle' | translate }}</span>
             </div>
 
             <form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-6 space-y-6">
               <div>
-                <label class="font-mono text-xs text-gray-500 mb-2 block uppercase tracking-wider" for="cf-name"
-                  >Name *</label
-                >
+                <label class="font-mono text-xs text-gray-500 mb-2 block uppercase tracking-wider" for="cf-name">{{
+                  'contact.name' | translate
+                }}</label>
                 <input
                   id="cf-name"
                   formControlName="name"
                   type="text"
-                  placeholder="John Doe"
+                  [placeholder]="'contact.phName' | translate"
                   class="w-full bg-black border border-gray-800 px-4 py-3 text-white font-mono focus:border-green-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black transition-colors"
                 />
               </div>
 
               <div>
-                <label class="font-mono text-xs text-gray-500 mb-2 block uppercase tracking-wider" for="cf-email"
-                  >Email *</label
-                >
+                <label class="font-mono text-xs text-gray-500 mb-2 block uppercase tracking-wider" for="cf-email">{{
+                  'contact.emailLabel' | translate
+                }}</label>
                 <input
                   id="cf-email"
                   formControlName="email"
                   type="email"
-                  placeholder="john@example.com"
+                  [placeholder]="'contact.phEmail' | translate"
                   class="w-full bg-black border border-gray-800 px-4 py-3 text-white font-mono focus:border-green-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black transition-colors"
                 />
               </div>
 
               <div>
-                <label class="font-mono text-xs text-gray-500 mb-2 block uppercase tracking-wider" for="cf-subject"
-                  >Subject *</label
-                >
+                <label class="font-mono text-xs text-gray-500 mb-2 block uppercase tracking-wider" for="cf-subject">{{
+                  'contact.subject' | translate
+                }}</label>
                 <input
                   id="cf-subject"
                   formControlName="subject"
                   type="text"
-                  placeholder="Project Inquiry"
+                  [placeholder]="'contact.phSubject' | translate"
                   class="w-full bg-black border border-gray-800 px-4 py-3 text-white font-mono focus:border-green-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black transition-colors"
                 />
               </div>
 
               <div>
-                <label class="font-mono text-xs text-gray-500 mb-2 block uppercase tracking-wider" for="cf-message"
-                  >Message *</label
-                >
+                <label class="font-mono text-xs text-gray-500 mb-2 block uppercase tracking-wider" for="cf-message">{{
+                  'contact.message' | translate
+                }}</label>
                 <textarea
                   id="cf-message"
                   formControlName="message"
-                  placeholder="Tell me about your project..."
+                  [placeholder]="'contact.phMessage' | translate"
                   rows="6"
                   class="w-full bg-black border border-gray-800 px-4 py-3 text-white font-mono focus:border-green-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black transition-colors resize-none"
                 ></textarea>
@@ -173,7 +185,7 @@
                   size="18"
                   class="group-hover:translate-x-1 transition-transform inline-block"
                 />
-                SEND.message()
+                {{ 'contact.send' | translate }}
               </button>
             </form>
           </div>

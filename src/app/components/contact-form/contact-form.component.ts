@@ -1,4 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import {
   FormBuilder,
   ReactiveFormsModule,
@@ -8,6 +9,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgIcon } from '@ng-icons/core';
 import { InViewDirective } from '../../core/in-view.directive';
 import { SITE_EMAIL } from '../../site-links';
+import { SocialBrandLogoComponent } from '../social-brand-logo/social-brand-logo.component';
 
 @Component({
   selector: 'app-contact-form',
@@ -17,6 +19,8 @@ import { SITE_EMAIL } from '../../site-links';
     MatSnackBarModule,
     NgIcon,
     InViewDirective,
+    TranslatePipe,
+    SocialBrandLogoComponent,
   ],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.css',
@@ -24,6 +28,7 @@ import { SITE_EMAIL } from '../../site-links';
 export class ContactFormComponent {
   private readonly fb = inject(FormBuilder);
   private readonly snackBar = inject(MatSnackBar);
+  private readonly translate = inject(TranslateService);
 
   readonly visible = signal(false);
   readonly contactEmail = SITE_EMAIL;
@@ -44,8 +49,23 @@ export class ContactFormComponent {
     message: ['', Validators.required],
   });
 
-  onInView(): void {
-    this.visible.set(true);
+  onInView(inside: boolean): void {
+    this.visible.set(inside);
+  }
+
+  /** Stagger cards on enter; reverse order on exit (bottom card hides first). */
+  contactCardDelayMs(slot: 0 | 1 | 2): number {
+    const enter = [200, 300, 400];
+    const exit = [140, 70, 0];
+    return this.visible() ? enter[slot] : exit[slot];
+  }
+
+  contactBlurbDelayMs(): number {
+    return this.visible() ? 500 : 180;
+  }
+
+  contactFormWrapDelayMs(): number {
+    return this.visible() ? 300 : 100;
   }
 
   async onSubmit(): Promise<void> {
@@ -66,8 +86,8 @@ export class ContactFormComponent {
     }
     window.location.href = mailto;
     this.snackBar.open(
-      'Opening your email app… Message also copied to clipboard as a backup.',
-      'Dismiss',
+      this.translate.instant('contact.snackOpen'),
+      this.translate.instant('contact.snackDismiss'),
       {
         duration: 6000,
         panelClass: ['portfolio-snackbar'],

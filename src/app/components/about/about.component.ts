@@ -1,57 +1,48 @@
 import { NgClass } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, DestroyRef, inject, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { InViewDirective } from '../../core/in-view.directive';
+
+/** Matches `about.code.0` … `about.code.21` in i18n (22 lines). */
+const ABOUT_CODE_LINE_COUNT = 22;
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [NgClass, InViewDirective],
+  imports: [NgClass, InViewDirective, TranslatePipe],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
 })
 export class AboutComponent {
+  private readonly translate = inject(TranslateService);
+  private readonly destroyRef = inject(DestroyRef);
+
   readonly visible = signal(false);
+  readonly codeLines = signal<string[]>([]);
 
-  readonly codeLines = [
-    'class Developer {',
-    '',
-    '    constructor() {',
-    "        this.name = 'Fatih Akman';",
-    "        this.role = 'Full-Stack Developer & Analyst';",
-    "        this.certification = 'PSPO I';",
-    "        this.experience = '5+ years';",
-    '    }',
-    '',
-    '    getCurrentProject() {',
-    '        return {',
-    "            client: 'European Wholesale Industry',",
-    "            type: 'Strategic Platform',",
-    '            responsibilities: [',
-    "                'Architecture & Development',",
-    "                'Monitoring & Support',",
-    "                'Stakeholder Management',",
-    '            ],',
-    '        };',
-    '    }',
-    '',
-    '    getSkills() {',
-    '        return {',
-    "            backend: ['Go', 'Laravel', 'PHP', 'Node.js'],",
-    "            frontend: ['React', 'Angular', 'Flutter'],",
-    "            databases: ['MySQL', 'PostgreSQL', 'IBM i DB2'],",
-    '            automation: [',
-    "                'n8n', 'Mistral', 'Discord',",
-    "                'Stripe / Polar', 'Bots', 'Loyalty / Wallet',",
-    '            ],',
-    "            specialty: 'Business-to-Tech Translation',",
-    '        };',
-    '    }',
-    '',
-    '}',
-  ];
+  constructor() {
+    const refresh = (): void => {
+      const lines: string[] = [];
+      for (let i = 0; i < ABOUT_CODE_LINE_COUNT; i++) {
+        lines.push(this.translate.instant(`about.code.${i}`));
+      }
+      this.codeLines.set(lines);
+    };
+    refresh();
+    this.translate.onLangChange
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(refresh);
+  }
 
-  onInView(): void {
-    this.visible.set(true);
+  onInView(inside: boolean): void {
+    this.visible.set(inside);
+  }
+
+  codeLineDelayMs(i: number): number {
+    const n = this.codeLines().length;
+    if (n === 0) return 0;
+    return this.visible() ? i * 50 : (n - 1 - i) * 45;
   }
 
   lineClass(line: string): string {

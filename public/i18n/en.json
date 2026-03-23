@@ -1,0 +1,328 @@
+{
+  "meta": {
+    "title": "Fatih Akman — Full-Stack Developer & Analyst | fatih@ogf_solutions",
+    "description": "Freelance analyst and full-stack developer. Angular, Go, PHP, Laravel, Flutter, enterprise data. PSPO I. Remote, small projects.",
+    "ogLocale": "en_US"
+  },
+  "nav": {
+    "about": "ABOUT",
+    "certifications": "CERTS",
+    "services": "SERVICES",
+    "stack": "STACK",
+    "projects": "PROJECTS",
+    "contact": "CONTACT"
+  },
+  "header": {
+    "brand": "fatih@ogf_solutions",
+    "hireMe": "HIRE_ME",
+    "menuToggle": "Toggle menu"
+  },
+  "lang": {
+    "en": "EN",
+    "fr": "FR",
+    "nl": "NL",
+    "tr": "TR"
+  },
+  "a11y": {
+    "language": "Language",
+    "socialLinks": "Social profiles"
+  },
+  "hero": {
+    "pathPortfolio": "~/portfolio",
+    "pathIntro": "./introduce",
+    "constDev": "const developer =",
+    "consolePrompt": "fatih@ogf_solutions:~$ ",
+    "consoleTitle": "bash — ~/portfolio/roles.txt",
+    "consoleCmd": "cat roles.txt",
+    "stdout": {
+      "0": "Freelance",
+      "1": "Analyst & Full Stack Developer",
+      "2": "Product Owner (PSPO I)"
+    },
+    "statYears": "Years Exp",
+    "statTech": "Technologies",
+    "statCert": "Certified",
+    "ctaContact": "CONTACT.init()",
+    "ctaExplore": "EXPLORE.run()",
+    "portraitAlt": "Fatih Akman — full-stack developer & analyst"
+  },
+  "about": {
+    "section": "About Me",
+    "panelFile": "developer.ts",
+    "headline1": "BUILDING SCALABLE",
+    "headline2": "DIGITAL SOLUTIONS",
+    "p1": "Currently contributing to a strategic platform for a leading European wholesale industry group, handling architecture, development, monitoring, and production support.",
+    "p2": "I bridge the gap between business stakeholders and technical teams, translating complex requirements into robust, scalable solutions.",
+    "p3": "With 5+ years of experience, I've delivered full-stack applications using Go, PHP, Laravel, Angular, and Flutter, working with enterprise databases like MySQL, IBM i DB2, and PostgreSQL.",
+    "statusLine": "Remote · small projects only",
+    "code": {
+      "0": "class Developer {",
+      "1": "",
+      "2": "    constructor() {",
+      "3": "        this.name = 'Fatih Akman';",
+      "4": "        this.role = 'Full-Stack Developer & Analyst';",
+      "5": "        this.certification = 'PSPO I';",
+      "6": "        this.experience = '5+ years';",
+      "7": "    }",
+      "8": "",
+      "9": "    getCurrentProject() {",
+      "10": "        return {",
+      "11": "            client: 'European Wholesale Industry',",
+      "12": "            type: 'Strategic Platform',",
+      "13": "            responsibilities: [",
+      "14": "                'Architecture & Development',",
+      "15": "                'Monitoring & Support',",
+      "16": "                'Translating business needs into technical solutions',",
+      "17": "            ],",
+      "18": "        };",
+      "19": "    }",
+      "20": "",
+      "21": "}"
+    }
+  },
+  "services": {
+    "section": "Services",
+    "headline1": "WHAT I",
+    "headline2": "CAN DO",
+    "fullstack": {
+      "title": "Full-Stack Development",
+      "command": "dev.build()",
+      "description": "End-to-end web applications with React, Angular, Node.js, PHP, Laravel, and Go.",
+      "tags": "Frontend|Backend|API"
+    },
+    "apicustom": {
+      "title": "Custom APIs",
+      "command": "api.custom()",
+      "description": "Design and delivery of tailor-made HTTP APIs: REST or GraphQL, authentication, versioning, documentation (OpenAPI), and integration with your existing systems and partners.",
+      "tags": "REST|GraphQL|OpenAPI|Integration"
+    },
+    "mobile": {
+      "title": "Mobile Development",
+      "command": "mobile.deploy()",
+      "description": "Cross-platform apps with Flutter, Ionic, and native iOS with Swift.",
+      "tags": "iOS|Android|Cross-platform"
+    },
+    "database": {
+      "title": "Database Architecture",
+      "command": "db.optimize()",
+      "description": "Design and optimization for MySQL, PostgreSQL, and IBM i DB2.",
+      "tags": "SQL|NoSQL|Performance"
+    },
+    "architecture": {
+      "title": "System Architecture",
+      "command": "sys.scale()",
+      "description": "Scalable architecture with monitoring and production support.",
+      "tags": "Cloud|DevOps|Monitoring"
+    },
+    "analysis": {
+      "title": "Business Analysis",
+      "command": "analyze.requirements()",
+      "description": "Translating business needs into technical solutions.",
+      "tags": "Strategy|Planning|Documentation"
+    },
+    "product": {
+      "title": "Product Ownership",
+      "command": "product.manage()",
+      "description": "PSPO I certified, bridging stakeholders and development teams.",
+      "tags": "Agile|Scrum|Leadership"
+    },
+    "automation": {
+      "title": "Business automation & n8n",
+      "command": "automate.workflows()",
+      "description": "Workflow automation with n8n: connect CRMs, APIs, notifications, and internal tools. End-to-end process automation for SMEs and larger orgs.",
+      "tags": "n8n|Integrations|APIs|Ops"
+    },
+    "ai": {
+      "title": "AI automation",
+      "command": "ai.orchestrate()",
+      "description": "LLM-powered pipelines: summarisation, classification, routing, and copilots wired into your stack — from prototypes to production guardrails.",
+      "tags": "Mistral|LLMs|RAG|Prompting"
+    },
+    "bots": {
+      "title": "Bots & messaging",
+      "command": "bot.deploy()",
+      "description": "Chatbots and task bots on Telegram, webhooks, and custom backends — alerts, support flows, and lightweight automation users can talk to.",
+      "tags": "Telegram|Discord|Webhooks|Chatbots"
+    },
+    "wallet": {
+      "title": "Loyalty & wallet cards",
+      "command": "loyalty.wallet()",
+      "description": "Digital fidelity / loyalty programmes: passes for Apple Wallet & Google Wallet, paired with iOS & Android apps for businesses (stamps, tiers, campaigns).",
+      "tags": "iOS|Android|Wallet|Retail"
+    }
+  },
+  "projects": {
+    "section": "Projects",
+    "headline1": "SELECTED",
+    "headline2": "WORK",
+    "sub": "Timeline aligned with your PDF (2020–2023 slides) and more recent work.",
+    "metaLine": "Full-Stack & Analyst",
+    "chrono": "// Chrono.parallax()",
+    "countSingular": "project",
+    "countPlural": "projects",
+    "wip": "WIP",
+    "nda": "NDA",
+    "pdfAria": "Open portfolio PDF — projects through 2023",
+    "pdfQrAlt": "QR code — portfolio PDF projects through 2023",
+    "pdfLabel": "// portfolio.archive.pdf",
+    "pdfBlurb": "Summary PDF of projects through 2023.",
+    "pdfLink": "Open portfolio PDF (2023)",
+    "entries": {
+      "ryflex": {
+        "name": "Ryflex",
+        "kind": "Application · home care (Belgium)",
+        "summary": "Replacement application for home care services in Belgium."
+      },
+      "confidential-2025": {
+        "name": "Confidential project — 2025",
+        "kind": "Retail (Europe) · 2025",
+        "summary": "NDA project for a major European retail company. Details not disclosed."
+      },
+      "lobi": {
+        "name": "Lobi",
+        "kind": "Android application",
+        "summary": "Personal work in progress. Android app with Firebase."
+      },
+      "altrove-media": {
+        "name": "Altrove Media",
+        "kind": "Media / news",
+        "summary": "Media that covers the news from another angle — Altrove."
+      },
+      "lubala": {
+        "name": "Lubala",
+        "kind": "WebApp",
+        "summary": "Flutter WebApp for a law firm in Kinshasa."
+      },
+      "havilaway": {
+        "name": "Havilaway",
+        "kind": "WebApp · IT Manager",
+        "summary": "Flutter WebApp for administrative and financial management in healthcare (London). Process automation, databases (SQL, Python)."
+      },
+      "emsf": {
+        "name": "EMSF",
+        "kind": "Showcase WebApp",
+        "summary": "Site for NGO Enfance Meurtrie Sans Frontière (emsf-monde.org) — street children and orphans."
+      },
+      "deenshop": {
+        "name": "DeenShop",
+        "kind": "Data analysis",
+        "summary": "Python tool for a bookstore: API-based analysis, sales tracking, profit distribution (publishers, suppliers)."
+      },
+      "la-bombetta": {
+        "name": "La Bombetta",
+        "kind": "WebApp",
+        "summary": "Site for Italian restaurant La Bombetta, Grand Sablon — Rue Sainte-Anne 24, 1000 Brussels."
+      },
+      "kace": {
+        "name": "Kace",
+        "kind": "E-commerce WebApp",
+        "summary": "T-shirt sales site highlighting Charleroi."
+      },
+      "tipstreet": {
+        "name": "TipStreet",
+        "kind": "Android application",
+        "summary": "Sports betting app: Firebase (auth, real-time data, notifications), bankroll and history, payments via Stripe."
+      }
+    }
+  },
+  "certs": {
+    "section": "Certifications",
+    "headline1": "CREDENTIALS",
+    "headline2": "& TRUST",
+    "issued": "Issued",
+    "expires": "Expires",
+    "id": "ID",
+    "verifyHint": "Verification on the issuing organisation’s portal.",
+    "verifyFallback": "Verify",
+    "ariaLogoExternal": "{{issuer}} — {{alt}} (external link)",
+    "items": {
+      "180944_10122025": {
+        "issuerShort": "ANSSI",
+        "issuer": "ANSSI — French National Cybersecurity Agency",
+        "title": "Introduction to cybersecurity",
+        "issued": "Dec 2025",
+        "expires": "Dec 2035",
+        "category": "Cybersecurity",
+        "issuerLogoAlt": "ANSSI logo"
+      },
+      "66a5fc98-e77c-433b-8826-86a75885e380": {
+        "issuerShort": "Scrum.org",
+        "issuer": "Scrum.org",
+        "title": "Professional Scrum Product Owner™ I (PSPO I)",
+        "issued": "May 2025",
+        "expires": "May 2028",
+        "verifyLabel": "Scrum.org — PSPO I",
+        "issuerLogoAlt": "Scrum.org"
+      }
+    }
+  },
+  "tech": {
+    "section": "Tech Stack",
+    "headline1": "TOOLS &",
+    "headline2": "TECHNOLOGIES",
+    "stackOpen": "stack = [",
+    "stackClose": "];",
+    "logoAlt": "{{name}} logo",
+    "categories": {
+      "language": "language",
+      "frontend": "frontend",
+      "backend": "backend",
+      "database": "database",
+      "tool": "tool",
+      "mobile": "mobile",
+      "automation": "automation",
+      "ai": "ai",
+      "payments": "payments",
+      "wallet": "wallet"
+    },
+    "stat1": "Technologies Mastered",
+    "stat2": "Development Approach",
+    "stat3": "Continuous Learning"
+  },
+  "contact": {
+    "section": "Get In Touch",
+    "headline1": "LET'S BUILD",
+    "headline2": "SOMETHING GREAT",
+    "email": "EMAIL",
+    "location": "LOCATION",
+    "locationPrefix": "Remote only — currently taking ",
+    "locationEmphasis": "small projects",
+    "status": "STATUS",
+    "statusBody": "Open for small remote work",
+    "blurbBefore": "Need a full-stack developer, analyst, or product clarity on a ",
+    "blurbEmphasis": "small",
+    "blurbAfter": " remote project? I’m taking limited remote engagements right now — send a short brief and we’ll see if it’s a fit.",
+    "responseTime": "< 24 hours",
+    "responseKey": "response_time",
+    "formTitle": "contact.form",
+    "name": "Name *",
+    "emailLabel": "Email *",
+    "subject": "Subject *",
+    "message": "Message *",
+    "phName": "John Doe",
+    "phEmail": "john@example.com",
+    "phSubject": "Project inquiry",
+    "phMessage": "Tell me about your project…",
+    "send": "SEND.message()",
+    "snackOpen": "Opening your email app… Message also copied to clipboard as a backup.",
+    "snackDismiss": "Dismiss"
+  },
+  "footer": {
+    "tagline": "Full-Stack Developer & Analyst building scalable digital products. PSPO I certified with 5+ years of experience.",
+    "statusReady": "ready",
+    "company": "// Company",
+    "navigate": "// Navigate",
+    "connect": "// Connect",
+    "about": "About",
+    "certifications": "Certifications",
+    "services": "Services",
+    "stack": "Tech Stack",
+    "projects": "Projects",
+    "contact": "Contact",
+    "li": "LinkedIn",
+    "mail": "Email",
+    "backTop": "BACK_TO_TOP",
+    "rights": "© {{year}} Fatih Akman. All rights reserved.",
+    "built": "Built with Angular + Tailwind + CSS animations"
+  }
+}
