@@ -176,8 +176,13 @@
       },
       "confidential-2025": {
         "name": "Projet confidentiel — 2025",
-        "kind": "Grande distribution (Europe) · 2025",
+        "kind": "Grande distribution (Europe)",
         "summary": "Projet sous NDA pour une grande société européenne de la grande distribution. Détails non divulguables."
+      },
+      "confidential-2024": {
+        "name": "Projet confidentiel — 2024",
+        "kind": "Grande distribution (Europe)",
+        "summary": "Projet sous NDA pour une société européenne de la grande distribution. Détails non divulguables."
       },
       "lobi": {
         "name": "Lobi",

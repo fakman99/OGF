@@ -176,8 +176,13 @@
       },
       "confidential-2025": {
         "name": "Vertrouwelijk project — 2025",
-        "kind": "Retail (Europa) · 2025",
+        "kind": "Retail (Europa)",
         "summary": "NDA-project voor een grote Europese retailorganisatie. Geen details."
+      },
+      "confidential-2024": {
+        "name": "Vertrouwelijk project — 2024",
+        "kind": "Retail (Europa)",
+        "summary": "NDA-project voor een Europese retailorganisatie. Geen details."
       },
       "lobi": {
         "name": "Lobi",

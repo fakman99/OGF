@@ -176,8 +176,13 @@
       },
       "confidential-2025": {
         "name": "Gizli proje — 2025",
-        "kind": "Perakende (Avrupa) · 2025",
+        "kind": "Perakende (Avrupa)",
         "summary": "Büyük bir Avrupa perakende şirketi için NDA altındaki proje. Detay yok."
+      },
+      "confidential-2024": {
+        "name": "Gizli proje — 2024",
+        "kind": "Perakende (Avrupa)",
+        "summary": "Avrupa perakende şirketi için NDA altındaki proje. Detay yok."
       },
       "lobi": {
         "name": "Lobi",

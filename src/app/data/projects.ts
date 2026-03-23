@@ -20,10 +20,17 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'confidential-2025',
-    years: '2025',
+    years: '2025–now',
     stack: ['NDA', 'Enterprise'],
     confidential: true,
     timelineYear: 2025,
+  },
+  {
+    slug: 'confidential-2024',
+    years: '2024',
+    stack: ['NDA', 'Enterprise'],
+    confidential: true,
+    timelineYear: 2024,
   },
   {
     slug: 'lobi',

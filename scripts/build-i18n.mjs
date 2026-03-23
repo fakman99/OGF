@@ -205,9 +205,15 @@ function buildEn() {
         },
         'confidential-2025': {
           name: 'Confidential project — 2025',
-          kind: 'Retail (Europe) · 2025',
+          kind: 'Retail (Europe)',
           summary:
             'NDA project for a major European retail company. Details not disclosed.',
+        },
+        'confidential-2024': {
+          name: 'Confidential project — 2024',
+          kind: 'Retail (Europe)',
+          summary:
+            'NDA project for a European retail company. Details not disclosed.',
         },
         lobi: {
           name: 'Lobi',
@@ -550,9 +556,15 @@ const frPatch = {
       },
       'confidential-2025': {
         name: 'Projet confidentiel — 2025',
-        kind: 'Grande distribution (Europe) · 2025',
+        kind: 'Grande distribution (Europe)',
         summary:
           'Projet sous NDA pour une grande société européenne de la grande distribution. Détails non divulguables.',
+      },
+      'confidential-2024': {
+        name: 'Projet confidentiel — 2024',
+        kind: 'Grande distribution (Europe)',
+        summary:
+          'Projet sous NDA pour une société européenne de la grande distribution. Détails non divulguables.',
       },
       lobi: {
         name: 'Lobi',
@@ -822,9 +834,15 @@ const nlPatch = {
       },
       'confidential-2025': {
         name: 'Vertrouwelijk project — 2025',
-        kind: 'Retail (Europa) · 2025',
+        kind: 'Retail (Europa)',
         summary:
           'NDA-project voor een grote Europese retailorganisatie. Geen details.',
+      },
+      'confidential-2024': {
+        name: 'Vertrouwelijk project — 2024',
+        kind: 'Retail (Europa)',
+        summary:
+          'NDA-project voor een Europese retailorganisatie. Geen details.',
       },
       lobi: {
         kind: 'Android-applicatie',
@@ -1069,9 +1087,15 @@ const trPatch = {
       },
       'confidential-2025': {
         name: 'Gizli proje — 2025',
-        kind: 'Perakende (Avrupa) · 2025',
+        kind: 'Perakende (Avrupa)',
         summary:
           'Büyük bir Avrupa perakende şirketi için NDA altındaki proje. Detay yok.',
+      },
+      'confidential-2024': {
+        name: 'Gizli proje — 2024',
+        kind: 'Perakende (Avrupa)',
+        summary:
+          'Avrupa perakende şirketi için NDA altındaki proje. Detay yok.',
       },
       lobi: {
         kind: 'Android uygulaması',
