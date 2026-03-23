@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fatihakman.dev/sitemap.xml
+Sitemap: https://ogf-solutions.eu/sitemap.xml

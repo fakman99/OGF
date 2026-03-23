@@ -3,6 +3,7 @@ import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { take } from 'rxjs/operators';
+import { SITE_ORIGIN } from '../site-links';
 
 export const SUPPORTED_LANGS = ['en', 'fr', 'nl', 'tr'] as const;
 export type AppLang = (typeof SUPPORTED_LANGS)[number];
@@ -107,6 +108,24 @@ export class LanguageService {
           name: 'twitter:description',
           content: String(t['meta.description']),
         });
+
+        const pageUrl = `${SITE_ORIGIN}/`;
+        const ogImage = `${SITE_ORIGIN}/og-image.png`;
+        this.meta.updateTag({ property: 'og:url', content: pageUrl });
+        this.meta.updateTag({ property: 'og:image', content: ogImage });
+        this.meta.updateTag({ name: 'twitter:image', content: ogImage });
+        this.setCanonicalHref(pageUrl);
       });
+  }
+
+  private setCanonicalHref(href: string): void {
+    const doc = this.document;
+    let link = doc.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!link) {
+      link = doc.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      doc.head.appendChild(link);
+    }
+    link.setAttribute('href', href);
   }
 }
